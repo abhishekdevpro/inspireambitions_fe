@@ -268,7 +268,7 @@ const ContactUs = () => {
             </p>
             <p className="text-slate-600 font-light mb-4 text-sm">
               {t("contact_anytime")} -{" "}
-              <span className="font-bold">&quot;Rakhi Das&quot;</span>
+              <span className="font-bold">&quot;Dummy Name&quot;</span>
             </p>
             <div>
               <button className="border px-3 py-2 rounded-lg">
@@ -312,11 +312,7 @@ const ContactUs = () => {
             <button
               className="border px-3 py-2 rounded-lg"
               onClick={() =>
-                window.open(
-                  "https://wa.me/918910082347",
-                  "_blank",
-                  "noopener,noreferrer"
-                )
+                window.open("https://wa.me/", "_blank", "noopener,noreferrer")
               }
             >
               <span className="text-slate-800 font-semibold text-sm hover:underline flex items-center">

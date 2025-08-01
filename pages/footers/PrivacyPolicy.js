@@ -140,7 +140,7 @@ function PrivacyPolicy() {
           <h2 className="text-xl font-semibold">10. Contact Us</h2>
           <p>
             This website (INSPIRE AMBITIONS) is operated under the registered
-            legal entity name *Rakhi Das*, in compliance with applicable laws
+            legal entity name *dummy name*, in compliance with applicable laws
             and regulations.
           </p>
           <p className="text-gray-700">
