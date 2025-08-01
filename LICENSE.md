@@ -1,0 +1,1 @@
+INSPIRE AMBITIONS Copyright (c) 2025
