@@ -29,14 +29,12 @@ import {
 } from "react-icons/fa";
 import { MdEmail, MdLocationOn, MdPhone } from "react-icons/md";
 import dynamic from "next/dynamic";
-import ContactAndSocialMedia from "./ContactAndSocial";
+import ContactAndSocialMedia3 from "./ContactAndSocial3";
 import { ImageWrapper, SummaryWrapper, TextWrapper } from "./Common";
 import WorkExperience from "./WorkExperience";
 import ProjectsSection from "./ProjectSection";
 import { SkillsWrapper } from "./SkillWrapper";
 import EducationSection from "./Education";
-import ContactAndSocialMedia2 from "./ContactAndSocial2";
-import EducationSection1 from "./Education1";
 // Importing draggable components dynamically
 const DragDropContext = dynamic(
   () => import("react-beautiful-dnd").then((mod) => mod.DragDropContext),
@@ -50,7 +48,7 @@ const Draggable = dynamic(
   () => import("react-beautiful-dnd").then((mod) => mod.Draggable),
   { ssr: false }
 );
-const Template49 = () => {
+const Template48 = () => {
   const {
     resumeData,
     setResumeData,
@@ -83,8 +81,8 @@ const Template49 = () => {
     >
       <section className="flex justify-between">
         <aside
-          className="w-4/12  p-4 border-r-2 border-black"
-          //   style={{ backgroundColor: backgroundColorss }}
+          className="w-4/12 bg-[#d4d4d8] p-4"
+          style={{ backgroundColor: backgroundColorss }}
         >
           <div
             style={{ borderBottom: `2px solid ${backgroundColorss}` }}
@@ -102,58 +100,46 @@ const Template49 = () => {
               />
             )}
           </div>
-          <div className=" ">
-            <div className="mb-5">
-              <ContactAndSocialMedia2
-                title="Contacts"
-                contactData={{
-                  teldata: resumeData.contactInformation,
-                  emaildata: resumeData.email,
-                  addressdata: resumeData.address,
-                }}
-                socialMediaData={resumeData.socialMedia}
-                icons={icons}
-                layout="column" // or "row"
-                contactClass=""
-                socialMediaClass=""
-                //   textColor="text-white"
-              />
-            </div>
 
-            <div className="mb-5">
-              <SkillsWrapper
-                skills={resumeData.skills}
-                //   headerColor={backgroundColorss ? "white" : "black"}
-                droppableId="skills-section-1"
-                className="mt-4"
-                textColor="black"
-                layout="column"
-              />
-            </div>
-            <div className="mb-5">
-              <Language
-                title="Languages"
-                languages={resumeData.languages}
-                headerColor={backgroundColorss ? "black" : "black"}
-              />
-            </div>
-
-            <div className="mb-5">
-              <EducationSection1
-                itemClassNames={{
-                  school: "",
-                  degree: "",
-                  location: "",
-                }}
-                layout="column"
-                educationData={resumeData?.education}
-                headerColor={backgroundColorss ? "black" : "white"}
-              />
-            </div>
+          <div className="mb-5">
+            <EducationSection
+              itemClassNames={{
+                school: "",
+                degree: "",
+                location: "",
+              }}
+              layout="column"
+              educationData={resumeData?.education}
+              headerColor={backgroundColorss ? "white" : "black"}
+            />
+          </div>
+          <div className="mb-5">
+            <SkillsWrapper
+              skills={resumeData.skills}
+              headerColor={backgroundColorss ? "white" : "black"}
+              droppableId="skills-section-1"
+              className="mt-4"
+              layout="column"
+            />
+          </div>
+          <div className="mb-5">
+            <Certification
+              title="Certifications"
+              certifications={resumeData.certifications}
+              hasBullet={true}
+              headerColor={backgroundColorss ? "white" : "black"}
+            />
+          </div>
+          <div className="flex flex-col gap-2">
+            <Language
+              title="Languages"
+              languages={resumeData.languages}
+              headerColor={backgroundColorss ? "white" : "black"}
+            />
           </div>
         </aside>
-        <div className="w-8/12 p-4">
-          <header className=" border-b-2 border-gray-200 pb-5 mb-5">
+        <div className="w-8/12 ">
+          <header className="p-4 border-b-2 border-gray-200 pb-5 mb-5">
             <TextWrapper
               name={resumeData.name}
               position={resumeData.position}
@@ -165,33 +151,49 @@ const Template49 = () => {
               summary={resumeData.summary}
               headerColor={"black"}
               editable={true} // Set to false if editing is not required
-              className="mt-4"
+              className="mt-4 "
             />
           </header>
-          <WorkExperience
-            itemClassNames={{
-              title: "text-lg font-bold mb-1  editable",
-              company: "",
-              position: "",
-              location: "",
-            }}
-            resumeData={resumeData}
-            headerColor={backgroundColorss}
-          />
-          <ProjectsSection
-            resumeData={resumeData}
-            headerColor={backgroundColorss}
-          />
-          <Certification
-            title="Certifications"
-            certifications={resumeData.certifications}
-            hasBullet={true}
-            headerColor={backgroundColorss ? "black" : "white"}
-          />
+          <div className="mb-5" style={{ backgroundColor: backgroundColorss }}>
+            <div className="p-4">
+              <ContactAndSocialMedia3
+                title="Contacts"
+                contactData={{
+                  teldata: resumeData.contactInformation,
+                  emaildata: resumeData.email,
+                  addressdata: resumeData.address,
+                }}
+                socialMediaData={resumeData.socialMedia}
+                icons={icons}
+                layout="column" // or "row"
+                contactClass=""
+                socialMediaClass=""
+                textColor="text-white"
+              />
+            </div>
+          </div>
+          <div className="p-4">
+            <WorkExperience
+              itemClassNames={{
+                title: "text-lg font-bold mb-1  editable",
+                company: "",
+                position: "",
+                location: "",
+              }}
+              resumeData={resumeData}
+              headerColor={backgroundColorss}
+            />
+          </div>
+          <div className="p-4">
+            <ProjectsSection
+              resumeData={resumeData}
+              headerColor={backgroundColorss}
+            />
+          </div>
         </div>
       </section>
     </div>
   );
 };
 
-export default Template49;
+export default Template48;

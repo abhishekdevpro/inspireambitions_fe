@@ -35,6 +35,7 @@ import template25 from "../preview/template/template25.png";
 import template26 from "../preview/template/template26.png";
 import template27 from "../preview/template/template27.png";
 import template28 from "../preview/template/template28.png";
+import template48 from "../preview/template/template48.png";
 import template49 from "../preview/template/template49.png";
 import template50 from "../preview/template/template50.png";
 import { BASE_URL } from "../Constant/constant";
@@ -327,6 +328,12 @@ const TemplateStep = ({ onNext, onBack, onChange, value }) => {
     {
       key: "template28",
       imageUrl: template28,
+      name: "Contemporary",
+      // hasPhoto: false,
+    },
+    {
+      key: "template48",
+      imageUrl: template48,
       name: "Contemporary",
       // hasPhoto: false,
     },
