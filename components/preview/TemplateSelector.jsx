@@ -29,6 +29,7 @@ import template25 from "./template/template25.png";
 import template26 from "./template/template26.png";
 import template27 from "./template/template27.png";
 import template28 from "./template/template28.png";
+import template47 from "./template/template47.png";
 import template48 from "./template/template48.png";
 import template49 from "./template/template49.png";
 import template50 from "./template/template50.png";
@@ -76,6 +77,7 @@ const TemplateSelector = ({
     { key: "template26", imageUrl: template26, pdfType: 3 },
     { key: "template27", imageUrl: template27, pdfType: 3 },
     { key: "template28", imageUrl: template28, pdfType: 2 },
+    { key: "template47", imageUrl: template47, pdfType: 3 },
     { key: "template48", imageUrl: template48, pdfType: 2 },
     { key: "template49", imageUrl: template49, pdfType: 2 },
     { key: "template50", imageUrl: template50, pdfType: 1 },

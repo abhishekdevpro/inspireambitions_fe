@@ -18,19 +18,8 @@ import {
   FaFacebook,
   FaInstagram,
   FaYoutube,
-  FaBold,
-  FaItalic,
-  FaPlus,
-  FaMinus,
-  FaAlignLeft,
-  FaAlignCenter,
-  FaAlignRight,
-  FaLink,
-  FaUnderline,
 } from "react-icons/fa";
-import { MdEmail, MdLocationOn, MdPhone } from "react-icons/md";
-import dynamic from "next/dynamic";
-import Link from "next/link";
+
 import ContactAndSocialMedia from "./ContactAndSocial";
 
 import EducationSection from "./Education";
@@ -39,21 +28,11 @@ import { ImageWrapper, SummaryWrapper, TextWrapper } from "./Common";
 import { SkillsWrapper } from "./SkillWrapper";
 import WorkExperience from "./WorkExperience";
 import ProjectsSection from "./ProjectSection";
+import WorkExperienceNew from "./WorkExperienceNew";
+import ProjectsSectionNew from "./ProjectSectionNew";
+import EducationSectionNew from "./EducationSectionNew";
 
-// Importing draggable components dynamically
-const DragDropContext = dynamic(
-  () => import("react-beautiful-dnd").then((mod) => mod.DragDropContext),
-  { ssr: false }
-);
-const Droppable = dynamic(
-  () => import("react-beautiful-dnd").then((mod) => mod.Droppable),
-  { ssr: false }
-);
-const Draggable = dynamic(
-  () => import("react-beautiful-dnd").then((mod) => mod.Draggable),
-  { ssr: false }
-);
-const Template13 = () => {
+const Template47 = () => {
   const {
     resumeData,
     setResumeData,
@@ -84,42 +63,53 @@ const Template13 = () => {
       className=""
       style={{ fontFamily: `${selectedFont}` }}
     >
-      <div className="header text-start mb-6">
-        <TextWrapper
-          name={resumeData.name}
-          position={resumeData.position}
-          headerColor={backgroundColorss}
-          orientation="column" // Use "column" for stacked layout
-        />
-        {/* <h1 className="text-2xl mb-1.5" style={{ color: headerColor }}>{resumeData.name}</h1> */}
-        <ContactAndSocialMedia
-          contactData={{
-            teldata: resumeData.contactInformation,
-            emaildata: resumeData.email,
-            addressdata: resumeData.address,
-          }}
-          socialMediaData={resumeData.socialMedia}
-          icons={icons}
-          layout="row" // or "row"
-          contactClass=""
-          socialMediaClass=""
-          className="justify-start gap-4 mt-6"
-        />
+      <div className="flex justify-between">
+        <div className="header text-start mb-6">
+          <TextWrapper
+            name={resumeData.name}
+            position={resumeData.position}
+            headerColor={backgroundColorss}
+            orientation="column" // Use "column" for stacked layout
+          />
+          {/* <h1 className="text-2xl mb-1.5" style={{ color: headerColor }}>{resumeData.name}</h1> */}
+          <ContactAndSocialMedia
+            contactData={{
+              teldata: resumeData.contactInformation,
+              emaildata: resumeData.email,
+              addressdata: resumeData.address,
+            }}
+            socialMediaData={resumeData.socialMedia}
+            icons={icons}
+            layout="row" // or "row"
+            contactClass=""
+            socialMediaClass=""
+            className="justify-start gap-4 mt-6"
+          />
+        </div>
+        <div className="mt-8">
+          {resumeData?.profilePicture && (
+            <ImageWrapper
+              src={resumeData.profilePicture}
+              alt="Profile Picture"
+              className=" rounded-full "
+              borderColor="white"
+            />
+          )}
+        </div>
       </div>
-
       <SummaryWrapper
         summary={resumeData.summary}
         headerColor={"black"}
         editable={true} // Set to false if editing is not required
-        className="mt-4"
+        className=""
       />
-      <section className="skills mb-6">
+      <section className="skills mt-6">
         <SkillsWrapper
           skills={resumeData.skills}
-          headerColor={backgroundColorss}
+          headerColor={"black"}
           droppableId="skills-section-1"
-          className="mt-4"
-          layout="row"
+          className="mt-2 flex flex-row justify-between"
+          layout="col "
           textColor="black"
         />
       </section>
@@ -127,7 +117,7 @@ const Template13 = () => {
         {/* <h2 className="text-lg font-bold mb-2.5 uppercase border-b border-black pb-0.5 " style={{ color: headerColor }}>Professional Experience</h2> */}
 
         <div className="col-span-2 space-y-2">
-          <WorkExperience
+          <WorkExperienceNew
             itemClassNames={{
               title:
                 "text-lg font-bold mb-1 border-b-2 border-gray-300 editable",
@@ -138,7 +128,7 @@ const Template13 = () => {
             resumeData={resumeData}
             headerColor={backgroundColorss}
           />
-          <ProjectsSection
+          <ProjectsSectionNew
             resumeData={resumeData}
             headerColor={backgroundColorss}
           />
@@ -148,7 +138,7 @@ const Template13 = () => {
       <section className="education mb-6">
         {resumeData.education.length > 0 && (
           <div className="mb-1">
-            <EducationSection
+            <EducationSectionNew
               itemClassNames={{
                 school: "",
                 degree: "",
@@ -180,4 +170,4 @@ const Template13 = () => {
   );
 };
 
-export default Template13;
+export default Template47;
