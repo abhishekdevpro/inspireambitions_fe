@@ -34,7 +34,9 @@ import template24 from "../preview/template/template24.png";
 import template25 from "../preview/template/template25.png";
 import template26 from "../preview/template/template26.png";
 import template27 from "../preview/template/template27.png";
-// import template28 from "../preview/template/template28.png";
+import template28 from "../preview/template/template28.png";
+import template49 from "../preview/template/template49.png";
+import template50 from "../preview/template/template50.png";
 import { BASE_URL } from "../Constant/constant";
 import { useTranslation } from "react-i18next";
 import { ResumeContext } from "../context/ResumeContext";
@@ -280,54 +282,66 @@ const TemplateStep = ({ onNext, onBack, onChange, value }) => {
     { key: "template18", imageUrl: template18, name: "Premium Plus" },
     { key: "template19", imageUrl: template19, name: "Executive Pro" },
     { key: "template20", imageUrl: template20, name: "Modern Elite" },
-    // {
-    //   key: "template21",
-    //   imageUrl: template21,
-    //   name: "Contemporary",
-    //   // hasPhoto: true,
-    // },
-    // {
-    //   key: "template22",
-    //   imageUrl: template22,
-    //   name: "Modern Clean",
-    //   // hasPhoto: false,
-    // },
-    // {
-    //   key: "template23",
-    //   imageUrl: template23,
-    //   name: "Creative",
-    //   // hasPhoto: true,
-    // },
-    // {
-    //   key: "template24",
-    //   imageUrl: template24,
-    //   name: "Executive",
-    //   // hasPhoto: true,
-    // },
-    // {
-    //   key: "template25",
-    //   imageUrl: template25,
-    //   name: "Minimal",
-    //   // hasPhoto: true
-    // },
-    // {
-    //   key: "template26",
-    //   imageUrl: template26,
-    //   name: "Classic",
-    //   // hasPhoto: false,
-    // },
-    // {
-    //   key: "template27",
-    //   imageUrl: template27,
-    //   name: "Contemporary",
-    //   // hasPhoto: false,
-    // },
-    // {
-    //   key: "template28",
-    //   imageUrl: template28,
-    //   name: "Contemporary",
-    //   // hasPhoto: false,
-    // },
+    {
+      key: "template21",
+      imageUrl: template21,
+      name: "Contemporary",
+      // hasPhoto: true,
+    },
+    {
+      key: "template22",
+      imageUrl: template22,
+      name: "Modern Clean",
+      // hasPhoto: false,
+    },
+    {
+      key: "template23",
+      imageUrl: template23,
+      name: "Creative",
+      // hasPhoto: true,
+    },
+    {
+      key: "template24",
+      imageUrl: template24,
+      name: "Executive",
+      // hasPhoto: true,
+    },
+    {
+      key: "template25",
+      imageUrl: template25,
+      name: "Minimal",
+      // hasPhoto: true
+    },
+    {
+      key: "template26",
+      imageUrl: template26,
+      name: "Classic",
+      // hasPhoto: false,
+    },
+    {
+      key: "template27",
+      imageUrl: template27,
+      name: "Contemporary",
+      // hasPhoto: false,
+    },
+    {
+      key: "template28",
+      imageUrl: template28,
+      name: "Contemporary",
+      // hasPhoto: false,
+    },
+    {
+      key: "template49",
+      imageUrl: template49,
+      name: "Contemporary",
+      // hasPhoto: false,
+    },
+    {
+      key: "template50",
+      imageUrl: template50,
+      name: "Contemporary",
+      // hasPhoto: false,
+    },
   ];
 
   useEffect(() => {
