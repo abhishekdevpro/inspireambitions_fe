@@ -96,13 +96,91 @@ const Certification = ({
   headerColor,
   className = "",
   itemClassNames = {},
+  newlayout = "default",
 }) => {
   const { backgroundColorss } = useContext(ResumeContext);
 
   if (!Array.isArray(certifications) || certifications.length === 0) {
     return null;
   }
+  if (newlayout === "timeline") {
+    return (
+      <div className={`mb-1 ${className}`}>
+        <div className="flex">
+          {/* Left Column - Title */}
+          <div className="w-1/4">
+            <h2
+              style={{
+                color: `${
+                  headerColor == "black" ? `${backgroundColorss}` : headerColor
+                }`,
+              }}
+              contentEditable
+              suppressContentEditableWarning
+              className="text-xl font-semibold mb-6"
+            >
+              {title}
+            </h2>
+          </div>
 
+          {/* Vertical separator line */}
+          <div className="w-0.5 bg-gray-300 mx-4" />
+
+          {/* Right Column - Content */}
+          <div className="w-3/4">
+            <Droppable droppableId="certifications" type="CERTIFICATIONS">
+              {(provided) => (
+                <div
+                  {...provided.droppableProps}
+                  ref={provided.innerRef}
+                  className={className}
+                >
+                  <ul
+                    style={{ color: headerColor }}
+                    className={` font-light text-sm ${
+                      hasBullet ? "list-disc pl-4 p-1" : ""
+                    }`}
+                  >
+                    {certifications.map((certification, index) => (
+                      <Draggable
+                        key={`certification-${index}`}
+                        draggableId={`CERTIFICATION-${index}`}
+                        index={index}
+                      >
+                        {(provided, snapshot) => (
+                          <li
+                            ref={provided.innerRef}
+                            {...provided.draggableProps}
+                            {...provided.dragHandleProps}
+                            className={`hover:scale-105 transition-transform duration-300 
+                      ${itemClassNames.content || ""}
+                      ${
+                        snapshot.isDragging &&
+                        "outline-dashed outline-2 outline-gray-400 bg-white"
+                      }
+                      hover:outline-dashed hover:outline-2 hover:outline-gray-400`}
+                          >
+                            <div
+                              contentEditable
+                              suppressContentEditableWarning
+                              dangerouslySetInnerHTML={{
+                                __html: certification,
+                              }}
+                            />
+                          </li>
+                        )}
+                      </Draggable>
+                    ))}
+                    {provided.placeholder}
+                  </ul>
+                </div>
+              )}
+            </Droppable>
+          </div>
+        </div>
+      </div>
+    );
+  }
   return (
     <Droppable droppableId="certifications" type="CERTIFICATIONS">
       {(provided) => (

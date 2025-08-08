@@ -392,6 +392,7 @@ import Template50 from "./Template50";
 import Template49 from "./Template49";
 import Template48 from "./Template48";
 import Template47 from "./Template47";
+import Template46 from "./Template46";
 // Importing draggable components dynamically
 const DragDropContext = dynamic(
   () => import("react-beautiful-dnd").then((mod) => mod.DragDropContext),
@@ -499,6 +500,7 @@ const Preview = forwardRef(({ selectedTemplate }, ref) => {
     template26: <Template26 />,
     template27: <Template27 />,
     template28: <Template28 />,
+    template46: <Template46 />,
     template47: <Template47 />,
     template48: <Template48 />,
     template49: <Template49 />,

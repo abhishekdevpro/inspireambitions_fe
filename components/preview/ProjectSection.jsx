@@ -3,10 +3,7 @@ import dynamic from "next/dynamic";
 import DateRange from "../utility/DateRange";
 import Link from "next/link";
 import DateRangeExperience from "../utility/DateRangeExperience";
-const DragDropContext = dynamic(
-  () => import("react-beautiful-dnd").then((mod) => mod.DragDropContext),
-  { ssr: false }
-);
+
 const Droppable = dynamic(
   () => import("react-beautiful-dnd").then((mod) => mod.Droppable),
   { ssr: false }
@@ -15,13 +12,147 @@ const Draggable = dynamic(
   () => import("react-beautiful-dnd").then((mod) => mod.Draggable),
   { ssr: false }
 );
-const ProjectsSection = ({ resumeData, headerColor }) => {
+const ProjectsSection = ({ resumeData, headerColor, layout = "default" }) => {
   if (!resumeData?.projects || resumeData.projects.length === 0) {
     return null;
   }
 
   // console.log(resumeData?.projects ,"llllll");
+  if (layout === "timeline") {
+    return (
+      <div className={`mb-1 `}>
+        <div className="flex">
+          {/* Left Column - Title */}
+          <div className="w-1/4">
+            <h2
+              style={{
+                color: `${
+                  headerColor == "black" ? `${backgroundColorss}` : headerColor
+                }`,
+              }}
+              contentEditable
+              suppressContentEditableWarning
+              className="text-xl font-semibold mb-6"
+            >
+              Projects
+            </h2>
+          </div>
 
+          {/* Vertical separator line */}
+          <div className="w-0.5 bg-gray-300 mx-4" />
+
+          {/* Right Column - Content */}
+          <div className="w-3/4">
+            <Droppable droppableId="projects" type="PROJECTS">
+              {(provided) => (
+                <div {...provided.droppableProps} ref={provided.innerRef}>
+                  {resumeData.projects.map((item, index) => (
+                    <Draggable
+                      key={`${item.name}-${index}`}
+                      draggableId={`PROJECTS-${index}`}
+                      index={index}
+                    >
+                      {(provided, snapshot) => (
+                        <div
+                          ref={provided.innerRef}
+                          {...provided.draggableProps}
+                          {...provided.dragHandleProps}
+                          className={`hover:scale-105 transition-transform duration-300 mb-3 pr-2 pb-2 pt-2 rounded-md ${
+                            snapshot.isDragging &&
+                            "outline-dashed outline-2 outline-gray-400 bg-white"
+                          }`}
+                        >
+                          <div className="flex flex-row justify-between space-y-1">
+                            <p
+                              className=" text-base font-normal"
+                              contentEditable
+                              suppressContentEditableWarning
+                            >
+                              {item.name}
+                            </p>
+                            <DateRangeExperience
+                              startYear={item.startYear}
+                              endYear={item.endYear}
+                              id={`projects-start-end-date`}
+                            />
+                          </div>
+                          <Link
+                            href={item.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className=" text-base font-normal"
+                            contentEditable
+                            suppressContentEditableWarning
+                          >
+                            {item.link}
+                          </Link>
+                          <div
+                            className="text-sm font-light"
+                            contentEditable
+                            suppressContentEditableWarning
+                            dangerouslySetInnerHTML={{
+                              __html: item.description,
+                            }}
+                          ></div>
+
+                          <Droppable
+                            droppableId={`PROJECTS_KEY_ACHIEVEMENT-${index}`}
+                            type="PROJECTS_KEY_ACHIEVEMENT"
+                          >
+                            {(provided) => (
+                              <ul
+                                className="list-disc pl-4 mt-2 font-light text-sm"
+                                {...provided.droppableProps}
+                                ref={provided.innerRef}
+                              >
+                                {item.keyAchievements &&
+                                  item.keyAchievements.map(
+                                    (achievement, subIndex) => (
+                                      <Draggable
+                                        key={`${item.name}-${index}-${subIndex}`}
+                                        draggableId={`PROJECTS_KEY_ACHIEVEMENT-${index}-${subIndex}`}
+                                        index={subIndex}
+                                      >
+                                        {(provided, snapshot) => (
+                                          <li
+                                            ref={provided.innerRef}
+                                            {...provided.draggableProps}
+                                            {...provided.dragHandleProps}
+                                            className={`
+                                    hover:outline-dashed hover:outline-2 hover:outline-gray-400
+                                    ${
+                                      snapshot.isDragging &&
+                                      "outline-dashed outline-2 outline-gray-400 bg-white"
+                                    }`}
+                                          >
+                                            <div
+                                              dangerouslySetInnerHTML={{
+                                                __html: achievement,
+                                              }}
+                                              contentEditable
+                                            />
+                                          </li>
+                                        )}
+                                      </Draggable>
+                                    )
+                                  )}
+                                {provided.placeholder}
+                              </ul>
+                            )}
+                          </Droppable>
+                        </div>
+                      )}
+                    </Draggable>
+                  ))}
+                  {provided.placeholder}
+                </div>
+              )}
+            </Droppable>
+          </div>
+        </div>
+      </div>
+    );
+  }
   return (
     <Droppable droppableId="projects" type="PROJECTS">
       {(provided) => (

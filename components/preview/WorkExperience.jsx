@@ -8,6 +8,7 @@ const WorkExperience = ({
   className = "",
   style = {},
   itemClassNames = {},
+  layout = "default",
 }) => {
   if (
     resumeData.is_fresher ||
@@ -16,7 +17,162 @@ const WorkExperience = ({
   ) {
     return null;
   }
+  // Timeline layout with vertical separator
+  if (layout === "timeline") {
+    return (
+      <div className={`mb-1 ${className}`}>
+        <div className="flex">
+          {/* Left Column - Title */}
 
+          <div className="w-1/4">
+            <h2
+              style={{
+                color: `${
+                  headerColor == "black" ? `${backgroundColorss}` : headerColor
+                }`,
+              }}
+              contentEditable
+              suppressContentEditableWarning
+              className="text-xl font-semibold mb-6"
+            >
+              Work Experience
+            </h2>
+          </div>
+
+          {/* Vertical separator line */}
+          <div className="w-0.5 bg-gray-300 mx-4" />
+
+          {/* Right Column - Content */}
+          <div className="w-3/4">
+            <Droppable droppableId="work-experience" type="WORK_EXPERIENCE">
+              {(provided) => (
+                <div
+                  {...provided.droppableProps}
+                  ref={provided.innerRef}
+                  className={className}
+                  style={style}
+                >
+                  {resumeData.workExperience.map((item, index) => (
+                    <Draggable
+                      key={`${item.company}-${index}`}
+                      draggableId={`WORK_EXPERIENCE-${index}`}
+                      index={index}
+                    >
+                      {(provided, snapshot) => (
+                        <div
+                          ref={provided.innerRef}
+                          {...provided.draggableProps}
+                          {...provided.dragHandleProps}
+                          className={`hover:scale-105 transition-transform duration-300 mb-3 pr-2 pt-2 pb-2 rounded-md ${
+                            itemClassNames.content || ""
+                          } ${
+                            snapshot.isDragging
+                              ? "outline-dashed outline-2 outline-gray-400 bg-white"
+                              : ""
+                          }`}
+                        >
+                          <div className="flex flex-row justify-between space-y-1">
+                            <p
+                              contentEditable
+                              suppressContentEditableWarning
+                              className="font-medium text-lg"
+                            >
+                              {item.company}
+                            </p>
+
+                            <p
+                              className="font-medium text-lg"
+                              contentEditable
+                              suppressContentEditableWarning
+                            >
+                              {item.location?.split(",")[0]?.trim()}
+                            </p>
+                          </div>
+
+                          <div className="flex flex-row justify-between space-y-1">
+                            <p
+                              className="font-normal text-base "
+                              contentEditable
+                              suppressContentEditableWarning
+                            >
+                              {item.position}
+                            </p>
+                            <DateRangeExperience
+                              startYear={item.startYear}
+                              endYear={item.endYear}
+                              id={`work-experience-start-end-date-${index}`}
+                            />
+                          </div>
+
+                          <div
+                            className="hover:outline-dashed hover:outline-2 hover:outline-gray-400 font-light text-sm"
+                            contentEditable
+                            suppressContentEditableWarning
+                            dangerouslySetInnerHTML={{
+                              __html: item.description,
+                            }}
+                          />
+
+                          {Array.isArray(item?.keyAchievements) &&
+                            item.keyAchievements.length > 0 && (
+                              <Droppable
+                                droppableId={`WORK_EXPERIENCE_KEY_ACHIEVEMENT-${index}`}
+                                type="WORK_EXPERIENCE_KEY_ACHIEVEMENT"
+                              >
+                                {(provided) => (
+                                  <ul
+                                    className="list-disc pl-4 mt-2 font-light text-sm"
+                                    {...provided.droppableProps}
+                                    ref={provided.innerRef}
+                                  >
+                                    {item.keyAchievements.map(
+                                      (achievement, subIndex) => (
+                                        <Draggable
+                                          key={`ACHIEVEMENT-${index}-${subIndex}`}
+                                          draggableId={`ACHIEVEMENT-${index}-${subIndex}`}
+                                          index={subIndex}
+                                        >
+                                          {(provided, snapshot) => (
+                                            <li
+                                              ref={provided.innerRef}
+                                              {...provided.draggableProps}
+                                              {...provided.dragHandleProps}
+                                              className={`hover:scale-105 transition-transform duration-300 hover:outline-dashed hover:outline-2 hover:outline-gray-400 ${
+                                                snapshot.isDragging
+                                                  ? "outline-dashed outline-2 outline-gray-400 bg-white"
+                                                  : ""
+                                              }`}
+                                            >
+                                              <div
+                                                dangerouslySetInnerHTML={{
+                                                  __html: achievement,
+                                                }}
+                                                contentEditable
+                                                suppressContentEditableWarning
+                                              />
+                                            </li>
+                                          )}
+                                        </Draggable>
+                                      )
+                                    )}
+                                    {provided.placeholder}
+                                  </ul>
+                                )}
+                              </Droppable>
+                            )}
+                        </div>
+                      )}
+                    </Draggable>
+                  ))}
+                  {provided.placeholder}
+                </div>
+              )}
+            </Droppable>
+          </div>
+        </div>
+      </div>
+    );
+  }
   return (
     <Droppable droppableId="work-experience" type="WORK_EXPERIENCE">
       {(provided) => (
