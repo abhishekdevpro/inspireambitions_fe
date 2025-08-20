@@ -219,7 +219,7 @@
 //                   <img
 //                     src={
 //                       photo
-//                         ? `https://api.createmyresume.in${photo}`
+//                         ? `https://api.inspireambitions.com${photo}`
 //                         : "https://img.freepik.com/premium-vector/businessman-avatar-illustration-cartoon-user-portrait-user-profile-icon_118339-4382.jpg"
 //                     }
 //                     alt="User"
@@ -643,7 +643,7 @@ const Navbar = () => {
   const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
 
   return (
-    <nav className="bg-white border-b border-gray-200">
+    <nav className="bg-beige border-b border-gray-200">
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0 flex items-center">
@@ -721,7 +721,7 @@ const Navbar = () => {
                   <img
                     src={
                       photo
-                        ? `https://api.createmyresume.in${photo}`
+                        ? `https://api.inspireambitions.com${photo}`
                         : "https://img.freepik.com/premium-vector/businessman-avatar-illustration-cartoon-user-portrait-user-profile-icon_118339-4382.jpg"
                     }
                     alt="User"

@@ -275,11 +275,12 @@ const Footer = () => {
               >
                 <input
                   type="email"
-                  placeholder={t("footer.type_your_email")}
+                  // placeholder={t("footer.type_your_email")}
+                  placeholder="Join 10,000+ job seekers"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="p-2 rounded text-black w-full md:w-auto"
+                  className="p-2 rounded text-black w-[250px] "
                 />
                 {/* <button
                   type="submit"
@@ -305,9 +306,9 @@ const Footer = () => {
                 {t("footer.cibli_job")}
               </h2>
               <ul className="mt-2 space-y-1">
-                <li>
+                {/* <li>
                   <Link href="/about-us">{t("footer.about_us")}</Link>
-                </li>
+                </li> */}
                 <li>
                   <Link href="/careers">{t("footer.careers")}</Link>
                 </li>
@@ -320,7 +321,8 @@ const Footer = () => {
             {/* Section 2 */}
             <div>
               <h2 className="text-lg font-bold text-[#00b38d]">
-                {t("footer.support")}
+                {/* {t("footer.support")} */}
+                About Us
               </h2>
               <div>
                 {/* <button
@@ -336,12 +338,16 @@ const Footer = () => {
                 />
               </div>
               <ul className="mt-2 space-y-1">
+                <li>
+                  <Link href="/about-us">{t("footer.about_us")}</Link>
+                </li>
                 <li
                   onClick={() => setShowPopup(true)}
                   className=" cursor-pointer"
                 >
                   {t("footer.support")}
                 </li>
+
                 <li>
                   <Link href="/salary-tools">{t("footer.salary_tool")}</Link>
                 </li>

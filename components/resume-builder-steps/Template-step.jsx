@@ -37,6 +37,10 @@ import template27 from "../preview/template/template27.png";
 import template28 from "../preview/template/template28.png";
 import template29 from "../preview/template/template29.png";
 import template30 from "../preview/template/template29.png";
+import template31 from "../preview/template/template29.png";
+import template32 from "../preview/template/template29.png";
+import template33 from "../preview/template/template29.png";
+import template34 from "../preview/template/template29.png";
 import template45 from "../preview/template/template45.png";
 import template46 from "../preview/template/template46.png";
 import template47 from "../preview/template/template47.png";
@@ -342,12 +346,36 @@ const TemplateStep = ({ onNext, onBack, onChange, value }) => {
       name: "Contemporary",
       // hasPhoto: false,
     },
-    // {
-    //   key: "template30",
-    //   imageUrl: template30,
-    //   name: "Contemporary",
-    //   // hasPhoto: false,
-    // },
+    {
+      key: "template30",
+      imageUrl: template30,
+      name: "Contemporary",
+      // hasPhoto: false,
+    },
+    {
+      key: "template31",
+      imageUrl: template31,
+      name: "Contemporary",
+      // hasPhoto: false,
+    },
+    {
+      key: "template32",
+      imageUrl: template32,
+      name: "Contemporary",
+      // hasPhoto: false,
+    },
+    {
+      key: "template33",
+      imageUrl: template33,
+      name: "Contemporary",
+      // hasPhoto: false,
+    },
+    {
+      key: "template34",
+      imageUrl: template34,
+      name: "Contemporary",
+      // hasPhoto: false,
+    },
     {
       key: "template45",
       imageUrl: template45,

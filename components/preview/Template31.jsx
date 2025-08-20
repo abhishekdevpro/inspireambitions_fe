@@ -17,18 +17,8 @@ import {
   FaFacebook,
   FaInstagram,
   FaYoutube,
-  FaBold,
-  FaItalic,
-  FaPlus,
-  FaMinus,
-  FaAlignLeft,
-  FaAlignCenter,
-  FaAlignRight,
-  FaLink,
-  FaUnderline,
 } from "react-icons/fa";
-import { MdEmail, MdLocationOn, MdPhone } from "react-icons/md";
-import dynamic from "next/dynamic";
+
 import ContactAndSocialMedia2 from "./ContactAndSocial2";
 import { SummaryWrapper, TextWrapper } from "./Common";
 import WorkExperience from "./WorkExperience";
@@ -36,21 +26,7 @@ import ProjectsSection from "./ProjectSection";
 import { SkillsWrapper } from "./SkillWrapper";
 //import EducationSection from "./Education";
 import EducationSection1 from "./Education1";
-// import { title } from "node:process";
-// import { timeLog } from "node:console";
-// Importing draggable components dynamically
-const DragDropContext = dynamic(
-  () => import("react-beautiful-dnd").then((mod) => mod.DragDropContext),
-  { ssr: false }
-);
-const Droppable = dynamic(
-  () => import("react-beautiful-dnd").then((mod) => mod.Droppable),
-  { ssr: false }
-);
-const Draggable = dynamic(
-  () => import("react-beautiful-dnd").then((mod) => mod.Draggable),
-  { ssr: false }
-);
+
 const Template31 = () => {
   const {
     resumeData,
@@ -84,15 +60,15 @@ const Template31 = () => {
     >
       <header className="p-4">
         <div className="p-4" style={{ backgroundColor: backgroundColorss }}>
-        <TextWrapper
-          name={resumeData.name.toUpperCase()}
-          position={resumeData.position.toUpperCase()}
-          className="justify-center items-center"
-          headerColor="white"
-          orientation="column" // Use "column" for stacked layout
-          positionclassName="text-white text-2xl mt-4"
-          nameclassName = "!text-6xl"
-        />
+          <TextWrapper
+            name={resumeData.name.toUpperCase()}
+            position={resumeData.position.toUpperCase()}
+            className="justify-center items-center"
+            headerColor="white"
+            orientation="column" // Use "column" for stacked layout
+            positionclassName="text-white text-2xl mt-4"
+            nameclassName="!text-6xl"
+          />
         </div>
         {/* <ContactAndSocialMedia
           contactData={{
@@ -128,15 +104,15 @@ const Template31 = () => {
             headerColor={backgroundColorss}
           />
           <EducationSection1
-              itemClassNames={{
-                school: "",
-                degree: "",
-                location: "",
-              }}
-              layout="row"
-              educationData={resumeData?.education}
-              headerColor={"black"}
-            />
+            itemClassNames={{
+              school: "",
+              degree: "",
+              location: "",
+            }}
+            layout="row"
+            educationData={resumeData?.education}
+            headerColor={"black"}
+          />
           <ProjectsSection
             resumeData={resumeData}
             headerColor={backgroundColorss}
@@ -144,30 +120,30 @@ const Template31 = () => {
         </div>
         <aside
           className="w-4/12 p-4 "
-        //  style={{ backgroundColor: backgroundColorss }}
+          //  style={{ backgroundColor: backgroundColorss }}
         >
-            <ContactAndSocialMedia2
-              title="Contacts"
-              contactData={{
-                teldata: resumeData.contactInformation,
-                emaildata: resumeData.email,
-                addressdata: resumeData.address,
-              }}
-              socialMediaData={resumeData.socialMedia}
-              icons={icons}
-              layout="column"
-              contactClass=""
-              socialMediaClass=""
-              // textColor="text-white"
+          <ContactAndSocialMedia2
+            title="Contacts"
+            contactData={{
+              teldata: resumeData.contactInformation,
+              emaildata: resumeData.email,
+              addressdata: resumeData.address,
+            }}
+            socialMediaData={resumeData.socialMedia}
+            icons={icons}
+            layout="column"
+            contactClass=""
+            socialMediaClass=""
+            // textColor="text-white"
+          />
+          <div className="mt-3">
+            <SummaryWrapper
+              summary={resumeData.summary}
+              // headerColor={"white"}
+              editable={true}
+              className=""
             />
-            <div className="mt-3">
-              <SummaryWrapper
-                summary={resumeData.summary}
-                // headerColor={"white"}
-                editable={true}
-                className=""
-              />
-            </div>
+          </div>
           <div className="mb-5">
             <Language
               title="Languages"

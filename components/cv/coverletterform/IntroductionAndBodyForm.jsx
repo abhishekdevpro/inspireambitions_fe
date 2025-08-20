@@ -8,6 +8,7 @@ import axios from "axios";
 
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 import "react-quill/dist/quill.snow.css";
+import { BASE_URL } from "../../Constant/constant";
 
 const IntroductionAndBodyForm = () => {
   const { t } = useTranslation();
@@ -42,8 +43,7 @@ const IntroductionAndBodyForm = () => {
     let payload = {};
 
     if (index === 0) {
-      endpoint =
-        "https://api.createmyresume.in/api/user/aisummery-section1-coverletter";
+      endpoint = `${BASE_URL}/api/user/aisummery-section1-coverletter`;
       payload = {
         name: personalDetails.name,
         target_role: personalDetails.position,
@@ -51,14 +51,12 @@ const IntroductionAndBodyForm = () => {
         location: personalDetails.address,
       };
     } else if (index === 1) {
-      endpoint =
-        "https://api.createmyresume.in/api/user/aisummery-section2-coverletter";
+      endpoint = `${BASE_URL}/api/user/aisummery-section2-coverletter`;
       payload = {
         target_role: personalDetails.position,
       };
     } else if (index === 2) {
-      endpoint =
-        "https://api.createmyresume.in/api/user/aisummery-section3-coverletter";
+      endpoint = `${BASE_URL}/api/user/aisummery-section3-coverletter`;
       payload = {
         name: personalDetails.name,
         target_role: personalDetails.position,

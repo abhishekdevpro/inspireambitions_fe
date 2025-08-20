@@ -873,6 +873,7 @@ import { BASE_URL } from "../../components/Constant/constant";
 import { PoundSterling } from "lucide-react";
 import PricingSection from "../../components/Pricing/PricingPlan";
 import { useRouter } from "next/router";
+import TestimonialSlider from "../../components/TestimonialSlider";
 function Home_five() {
   const router = useRouter();
   const [showModal, setShowModal] = useState(false);
@@ -977,6 +978,9 @@ function Home_five() {
             </div>
           </div>
         </section>
+      </div>
+      <div>
+        <TestimonialSlider />
       </div>
     </>
   );
