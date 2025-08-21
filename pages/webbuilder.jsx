@@ -767,6 +767,31 @@ export default function WebBuilder() {
             <div className="top-0  w-full bg-white shadow-sm">
               <div className="hidden md:flex justify-center items-center p-4">
                 <nav className="bg-gray-100 rounded-lg p-2">
+                  {/* Progress Bar */}
+                  <div className="mb-4 px-4">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-sm font-medium text-gray-700">
+                        Progress: {currentSection + 1} of {sections.length}
+                      </span>
+                      <span className="text-sm text-gray-500">
+                        {Math.round(
+                          ((currentSection + 1) / sections.length) * 100
+                        )}
+                        %
+                      </span>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-2">
+                      <div
+                        className="bg-teal-600 h-2 rounded-full transition-all duration-300 ease-in-out"
+                        style={{
+                          width: `${
+                            ((currentSection + 1) / sections.length) * 100
+                          }%`,
+                        }}
+                      ></div>
+                    </div>
+                  </div>
+
                   <div className="flex items-center">
                     <button
                       onClick={() => prevSection()}
