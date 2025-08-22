@@ -89,48 +89,48 @@ const Template33 = () => {
             : "flex justify-between items-start"
         } px-0 py-4`}
       >
-        <div className="flex justify-start">
-        {resumeData?.profilePicture && (
-          <ImageWrapper
-            src={resumeData.profilePicture}
-            alt="Profile Picture"
-            className="w-32 h-32 rounded-full"
-            borderColor={backgroundColorss}
+        <div className="flex justify-start px-2">
+          {resumeData?.profilePicture && (
+            <ImageWrapper
+              src={resumeData.profilePicture}
+              alt="Profile Picture"
+              className="w-32 h-32 rounded-full"
+              borderColor={backgroundColorss}
+            />
+          )}
+          <TextWrapper
+            name={resumeData?.name}
+            position={resumeData?.position}
+            className={
+              resumeData?.profilePicture
+                ? "justify-start items-start px-3"
+                : "text-start"
+            }
+            nameclassName="!text-4xl"
+            positionclassName="!text-xl mb-10"
+            headerColor={backgroundColorss}
+            orientation="column"
           />
-        )}
-        <TextWrapper
-          name={resumeData?.name}
-          position={resumeData?.position}
-          className={
-            resumeData?.profilePicture
-              ? "justify-start items-start px-3"
-              : "text-start"
-          }
-          nameclassName="!text-4xl"
-          positionclassName="!text-xl mb-10"
-          headerColor={backgroundColorss}
-          orientation="column"
-        />
         </div>
         <div
-            className="right-column w-4/12 bg-gray-100 pl-4 py-4 rounded-lg"
-            style={{ backgroundColor: backgroundColorss }}
+          className="right-column w-4/12 bg-gray-100 pl-4 py-4 rounded-lg"
+          style={{ backgroundColor: backgroundColorss }}
         >
-         <ContactAndSocialMedia
-              //title="Contacts"
-              contactData={{
-                teldata: resumeData.contactInformation,
-                emaildata: resumeData.email,
-                addressdata: resumeData.address,
-              }}
-              socialMediaData={resumeData.socialMedia}
-              icons={icons}
-              layout="column"
-              contactClass=""
-              socialMediaClass=""
-              textColor="text-white "
-            />
-            </div>
+          <ContactAndSocialMedia
+            //title="Contacts"
+            contactData={{
+              teldata: resumeData.contactInformation,
+              emaildata: resumeData.email,
+              addressdata: resumeData.address,
+            }}
+            socialMediaData={resumeData.socialMedia}
+            icons={icons}
+            layout="column"
+            contactClass=""
+            socialMediaClass=""
+            textColor="text-white "
+          />
+        </div>
       </div>
 
       <div className=" mx-auto flex">
@@ -156,11 +156,11 @@ const Template33 = () => {
                 headerColor={backgroundColorss}
               />
               <Certification
-              title="Certifications"
-              certifications={resumeData.certifications}
-              hasBullet={true}
-              headerColor={backgroundColorss ? "black" : "white"}
-            />
+                title="Certifications"
+                certifications={resumeData.certifications}
+                hasBullet={true}
+                headerColor={backgroundColorss ? "black" : "white"}
+              />
             </div>
           </div>
         </div>
@@ -172,11 +172,11 @@ const Template33 = () => {
         >
           <div className="flex flex-col gap-4">
             <SummaryWrapper
-                summary={resumeData.summary}
-                headerColor={"white"}
-                editable={true}
-                className=""
-              />
+              summary={resumeData.summary}
+              headerColor={"white"}
+              editable={true}
+              className=""
+            />
             <SkillsWrapper
               skills={resumeData.skills}
               headerColor={backgroundColorss ? "white" : "black"}
@@ -184,7 +184,7 @@ const Template33 = () => {
               className="mt-4"
               layout="column"
             />
-              <EducationSection
+            <EducationSection
               itemClassNames={{
                 school: "",
                 degree: "",

@@ -10,6 +10,7 @@ import { useTranslation } from "react-i18next";
 import { BASE_URL } from "../../Constant/constant";
 import axios from "axios";
 import Link from "next/link";
+import { toast } from "react-toastify";
 const TemplateSelector = ({
   selectedTemplate,
   setSelectedTemplate,

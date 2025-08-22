@@ -31,15 +31,30 @@ import Template25 from "./Template25";
 import Template26 from "./Template26";
 import Template27 from "./Template27";
 import Template28 from "./Template28";
-import Template50 from "./Template50";
-import Template49 from "./Template49";
-import Template48 from "./Template48";
-import Template47 from "./Template47";
-import Template46 from "./Template46";
 import Template29 from "./Template29";
 import Template30 from "./Template30";
-import Template45 from "./Template45";
 import Template31 from "./Template31";
+import Template32 from "./Template32";
+import Template33 from "./Template33";
+import Template34 from "./Template34";
+import Template35 from "./Template35";
+import Template36 from "./Template36";
+import Template37 from "./Template37";
+import Template38 from "./Template38";
+import Template39 from "./Template39";
+import Template40 from "./Template40";
+import Template41 from "./Template41";
+import Template42 from "./Template42";
+import Template43 from "./Template43";
+import Template44 from "./Template44";
+import Template45 from "./Template45";
+import Template46 from "./Template46";
+import Template47 from "./Template47";
+import Template48 from "./Template48";
+import Template49 from "./Template49";
+import Template50 from "./Template50";
+import Template51 from "./Template51";
+import Template52 from "./Template52";
 // Importing draggable components dynamically
 const DragDropContext = dynamic(
   () => import("react-beautiful-dnd").then((mod) => mod.DragDropContext),
@@ -82,12 +97,27 @@ const DashboardPreview = forwardRef(({ selectedTemplate }, ref) => {
     template29: <Template29 />,
     template30: <Template30 />,
     template31: <Template31 />,
+    template32: <Template32 />,
+    template33: <Template33 />,
+    template34: <Template34 />,
+    template35: <Template35 />,
+    template36: <Template36 />,
+    template37: <Template37 />,
+    template38: <Template38 />,
+    template39: <Template39 />,
+    template40: <Template40 />,
+    template41: <Template41 />,
+    template42: <Template42 />,
+    template43: <Template43 />,
+    template44: <Template44 />,
     template45: <Template45 />,
     template46: <Template46 />,
     template47: <Template47 />,
     template48: <Template48 />,
     template49: <Template49 />,
     template50: <Template50 />,
+    template51: <Template51 />,
+    template52: <Template52 />,
   };
 
   const onDragEnd = (result) => {

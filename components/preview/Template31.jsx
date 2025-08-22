@@ -58,7 +58,7 @@ const Template31 = () => {
       className=""
       style={{ fontFamily: `${selectedFont}` }}
     >
-      <header className="p-4">
+      <header className="">
         <div className="p-4" style={{ backgroundColor: backgroundColorss }}>
           <TextWrapper
             name={resumeData.name.toUpperCase()}
@@ -70,25 +70,6 @@ const Template31 = () => {
             nameclassName="!text-6xl"
           />
         </div>
-        {/* <ContactAndSocialMedia
-          contactData={{
-            teldata: resumeData.contactInformation,
-            emaildata: resumeData.email,
-            addressdata: resumeData.address,
-          }}
-          socialMediaData={resumeData.socialMedia}
-          icons={icons}
-          layout="row" // or "row"
-          contactClass=""
-          socialMediaClass=""
-          className="items-center justify-center mt-6 mb-6"
-        />
-        <SummaryWrapper
-          summary={resumeData.summary}
-          headerColor={"black"}
-          editable={true} // Set to false if editing is not required
-          className="mt-4"
-        /> */}
       </header>
 
       <section className="flex justify-between">

@@ -43,6 +43,7 @@ const Modal = ({ isOpen, onClose, children }) => {
 
 const TooltipContent = ({ improvements, resumeId, onClose }) => {
   const [Loading, setLoading] = useState(false);
+  const [improveBy, setImproveBy] = useState(null);
   const router = useRouter();
   const { t } = useTranslation();
   const { selectedLang } = useContext(ResumeContext);
@@ -67,6 +68,16 @@ const TooltipContent = ({ improvements, resumeId, onClose }) => {
       value: improvements?.formatting?.contact_info_visible,
       description: t("formatting.contact_info_desc"),
     },
+    {
+      label: "Clear Experience",
+      value: improvements?.formatting?.clear_experience,
+      description: "Work experience section is clearly structured and readable",
+    },
+    {
+      label: "Clear Summary",
+      value: improvements?.formatting?.clear_summary,
+      description: "Summary section is well-written and clearly presented",
+    },
   ];
 
   const handleATS = async () => {
@@ -76,7 +87,7 @@ const TooltipContent = ({ improvements, resumeId, onClose }) => {
 
     try {
       const response = await axios.get(
-        `${BASE_URL}/api/user/ats-improve/${resumeId}?lang=${selectedLang}`,
+        `${BASE_URL}/api/user/ats-improve/${resumeId}?improve_by=${improveBy}&lang=${selectedLang}`,
         {
           headers: {
             Authorization: token,
@@ -101,15 +112,16 @@ const TooltipContent = ({ improvements, resumeId, onClose }) => {
   };
 
   return (
-    <div className="h-[600px] overflow-y-auto p-6 bg-gray-50 rounded-lg shadow-md">
-      <div className="flex flex-col">
+    <div className="h-[600px] bg-gradient-to-b from-white to-blue-100 overflow-y-auto p-6 bg-gray-50 rounded-lg shadow-md">
+      <header className="bg-blue-700 text-white px-4 py-6 flex items-center justify-between"></header>
+      <div className="flex flex-col bg-gradient-to-b from-white to-blue-100 ">
         {/* Improvements Section */}
-        <div className="p-6 bg-white rounded-lg shadow-sm">
+        <div className="p-6  rounded-lg ">
           <h3 className="text-lg font-semibold text-gray-900 mb-4">
             {t("improvements.title")}
           </h3>
           <ul className="space-y-3">
-            {improvements?.areas_for_improvement?.file_format && (
+            {/* {improvements?.areas_for_improvement?.file_format && (
               <li className="flex items-start gap-3">
                 <div className="w-2 h-2 mt-2 bg-blue-500 rounded-full" />
                 <p className="text-gray-700">
@@ -128,6 +140,37 @@ const TooltipContent = ({ improvements, resumeId, onClose }) => {
                     {t("improvements.keyword_optimization")}:{" "}
                   </span>
                   {improvements.areas_for_improvement.keyword_optimization}
+                </p>
+              </li>
+            )} */}
+            {improvements?.areas_for_improvement?.file_format && (
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 mt-2 bg-primary rounded-full" />
+                <p className="text-gray-700">
+                  <span className="font-bold text-black">
+                    File Formatting:{" "}
+                  </span>
+                  {improvements.areas_for_improvement.file_format}
+                </p>
+              </li>
+            )}
+            {improvements?.areas_for_improvement?.keyword_optimization && (
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 mt-2 bg-primary rounded-full" />
+                <p className="text-gray-700">
+                  <span className="font-bold text-black">
+                    Keyword Optimization:{" "}
+                  </span>
+                  {improvements.areas_for_improvement.keyword_optimization}
+                </p>
+              </li>
+            )}
+            {improvements?.areas_for_improvement?.section_order && (
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 mt-2 bg-primary rounded-full" />
+                <p className="text-gray-700">
+                  <span className="font-bold text-black">Section Order: </span>
+                  {improvements.areas_for_improvement.section_order}
                 </p>
               </li>
             )}
@@ -167,7 +210,33 @@ const TooltipContent = ({ improvements, resumeId, onClose }) => {
           </ul>
         </div>
       </div>
-
+      {/* Keywords Section */}
+      <div className="w-full flex flex-col md:flex-row justify-between items-start gap-2 md:gap-6 mt-6">
+        <div className="w-full md:w-1/2 p-4 bg-success/20 text-success rounded-lg">
+          <h4 className="font-bold text-lg">Keywords Found</h4>
+          {improvements.keywords_found?.length > 0 ? (
+            <ul className="list-disc list-inside">
+              {improvements.keywords_found.map((keyword, index) => (
+                <li key={index}>{keyword}</li>
+              ))}
+            </ul>
+          ) : (
+            <p>No missing keywords</p>
+          )}
+        </div>
+        <div className="w-full md:w-1/2 p-4 bg-red-100 text-red-700 rounded-lg">
+          <h4 className="font-bold text-lg">Keywords Missing</h4>
+          {improvements.keywords_missing?.length > 0 ? (
+            <ul className="list-disc list-inside">
+              {improvements.keywords_missing.map((keyword, index) => (
+                <li key={index}>{keyword}</li>
+              ))}
+            </ul>
+          ) : (
+            <p>No missing keywords</p>
+          )}
+        </div>
+      </div>
       {/* Overall Comments */}
       <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-xl p-6 mt-6 text-white">
         <h3 className="text-lg font-bold">{t("overall_comments")}</h3>
@@ -376,7 +445,7 @@ const ResumeStrength = ({ score, strength, resumeId }) => {
               >
                 {t("resumeStrength.improveResume")}
               </button>
-              {/* <button
+              <button
                 disabled={strength.ats_score === 10 || !resumeId}
                 onClick={() => setIsModalOpen(true)}
                 className={`px-6 py-2 bg-teal-700 text-white rounded-lg hover:bg-teal-800 transition-colors ${
@@ -386,7 +455,7 @@ const ResumeStrength = ({ score, strength, resumeId }) => {
                 }`}
               >
                 {t("resumeStrength.improveATS")}
-              </button> */}
+              </button>
             </div>
           </div>
         </div>
