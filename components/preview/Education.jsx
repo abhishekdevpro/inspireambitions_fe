@@ -8,6 +8,7 @@ const EducationSection = ({
   className = "",
   layout = "column", // "column" or "row"
   newlayout = "default",
+  Hidden
 }) => {
   const { backgroundColorss } = useContext(ResumeContext);
   if (!educationData || educationData.length === 0) return null;
@@ -114,7 +115,7 @@ const EducationSection = ({
             headerColor == "black" ? `${backgroundColorss}` : headerColor
           }`,
         }}
-        className="text-xl font-semibold mb-1"
+        className={`text-xl font-semibold mb-1 ${Hidden}`}
         contentEditable
         suppressContentEditableWarning
       >

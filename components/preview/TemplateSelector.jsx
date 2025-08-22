@@ -34,9 +34,9 @@ import template30 from "./template/template29.png";
 import template31 from "./template/template29.png";
 import template32 from "./template/template29.png";
 import template33 from "./template/template29.png";
-import template34 from "./template/template29.png";
-import template35 from "./template/template46.png";
-import template36 from "./template/template46.png";
+import template34 from "./template/template34.png";
+import template35 from "./template/template35.png";
+import template36 from "./template/template36.png";
 import template37 from "./template/template47.png";
 import template38 from "./template/template48.png";
 import template39 from "./template/template49.png";
@@ -101,9 +101,9 @@ const TemplateSelector = ({
     { key: "template31", imageUrl: template31, pdfType: 4 },
     { key: "template32", imageUrl: template32, pdfType: 2 },
     { key: "template33", imageUrl: template33, pdfType: 4 },
-    { key: "template34", imageUrl: template34, pdfType: 4 },
-    { key: "template35", imageUrl: template35, pdfType: 4 },
-    { key: "template36", imageUrl: template36, pdfType: 4 },
+    { key: "template34", imageUrl: template34, pdfType: 3 },
+    { key: "template35", imageUrl: template35, pdfType: 3 },
+    { key: "template36", imageUrl: template36, pdfType: 3 },
     { key: "template37", imageUrl: template37, pdfType: 4 },
     { key: "template38", imageUrl: template38, pdfType: 4 },
     { key: "template39", imageUrl: template39, pdfType: 4 },

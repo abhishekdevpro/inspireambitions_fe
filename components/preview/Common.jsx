@@ -272,6 +272,7 @@ const SummaryWrapper = ({
   className = "",
   summaryclassName = "",
   layout = "default", // "default" or "timeline"
+  Hidden
 }) => {
   const { backgroundColorss } = useContext(ResumeContext);
 
@@ -330,7 +331,7 @@ const SummaryWrapper = ({
         }}
         contentEditable
         suppressContentEditableWarning
-        className="text-xl font-semibold mb-1 "
+        className={`text-xl font-semibold mb-1 ${Hidden}`}
       >
         Summary
       </h2>
