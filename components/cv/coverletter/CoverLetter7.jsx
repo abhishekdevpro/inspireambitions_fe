@@ -8,7 +8,7 @@ import IntroductionBodyWrapper from "./IntroductionBodyWrapper";
 import SocialInfo from "./SocialInfo";
 import ImageWrapper from "./ImageWrapper";
 
-const CoverLetter2 = () => {
+const CoverLetter7 = () => {
   const { coverLetterData, backgroundColorss, selectedFont } =
     useContext(CoverLetterContext);
 
@@ -17,22 +17,24 @@ const CoverLetter2 = () => {
       <div className=" mx-auto flex ">
         {/* Left Column */}
         <div
-          className="right-column w-4/12  px-4 py-8 "
+          className="right-column w-4/12  px-4 py-8"
           style={{
             backgroundColor: backgroundColorss,
             minHeight: "1122px",
-            maxHeight: "auto",
+            maxHeight: "1200px",
           }}
         >
-          <div className="flex justify-center items-center mb-4">
-            {coverLetterData?.photo && (
-              <ImageWrapper
-                src={coverLetterData.photo}
-                className="w-32 h-32 rounded-full"
-              />
-            )}
+            <div className="relative h-auto">
+          <div className="p-5 px-20 bg-black ml-20 absolute">
+              <PersonalInfoWrapper
+              personalDetails={coverLetterData?.personalDetails || {}}
+              editable={true}
+              className=""
+              headerColor="white"
+            />
           </div>
-          <div>
+          </div>
+          <div className="mt-40">
             <SocialInfo
               personalDetails={coverLetterData?.personalDetails || {}}
               headerColor={backgroundColorss ? "white" : "black"}
@@ -43,20 +45,28 @@ const CoverLetter2 = () => {
         {/* Right Column */}
         <div className="left-column w-8/12 p-4 ">
           <div
-            className="p-4"
-            style={{
-              borderBottom: `2px solid ${backgroundColorss}`,
-            }}
+            className="flex p-4 justify-end mb-12"
+            // style={{
+            //   borderBottom: `2px solid ${backgroundColorss}`,
+            // }}
           >
-            <PersonalInfoWrapper
-              personalDetails={coverLetterData?.personalDetails || {}}
-              editable={true}
-              className=" "
-              // headerColor={backgroundColorss ? "white" : "black"}
-            />
+          {coverLetterData?.photo && (
+              <ImageWrapper
+                src={coverLetterData.photo}
+                className="w-32 h-32 rounded-full"
+              />
+            )}
           </div>
 
           {/* Job 1 */}
+          <div
+          style={{backgroundColor: backgroundColorss, color: backgroundColorss? "white":"black"}}
+          className={`${
+            coverLetterData?.photo ? "w-10/12 h-1/7 text-left text-lg pl-10" : "text-center mt-40 p-1"
+          }`}
+          >
+            COVER LETTER
+          </div>
           <div className="flex flex-col gap-4">
             <div className="col-span-2 space-y-2">
               <div>
@@ -83,4 +93,4 @@ const CoverLetter2 = () => {
   );
 };
 
-export default CoverLetter2;
+export default CoverLetter7;

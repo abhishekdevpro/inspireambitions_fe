@@ -6,7 +6,10 @@ import cvletter2 from "./cvimgs/cvletter2.png";
 import cvletter3 from "./cvimgs/cvletter3.png";
 import cvletter4 from "./cvimgs/cvletter4.png";
 import cvletter5 from "./cvimgs/cvletter5.png";
+import cvletter6 from "./cvimgs/cvletter6.png";
+import cvletter7 from "./cvimgs/cvletter7.png";
 import { useTranslation } from "react-i18next";
+import {toast} from "react-toastify";
 import { BASE_URL } from "../../Constant/constant";
 import axios from "axios";
 import Link from "next/link";
@@ -30,6 +33,8 @@ const TemplateSelector = ({
     { key: "template3", imageUrl: cvletter3, pdfType: 3 },
     { key: "template4", imageUrl: cvletter4, pdfType: 3 },
     { key: "template5", imageUrl: cvletter5, pdfType: 4 },
+    { key: "template6", imageUrl: cvletter6, pdfType: 4 },
+    { key: "template7", imageUrl: cvletter7, pdfType: 2 },
   ];
   useEffect(() => {
     const fetchUserProfile = async () => {
