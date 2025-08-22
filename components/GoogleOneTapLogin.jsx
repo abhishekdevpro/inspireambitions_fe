@@ -26,8 +26,7 @@ const GoogleOneTapLogin = () => {
     const { google } = window;
     if (google) {
       google.accounts.id.initialize({
-        client_id:
-          "758600036454-6jkhgmsga20g9moaine458ja9bc718si.apps.googleusercontent.com",
+        client_id: process.env.NEXT_PUBLIC_CLIENT_ID,
         callback: async (response) => {
           // Here we call our Provider with the token provided by google
           call(response.credential);

@@ -29,7 +29,7 @@ import {
 } from "react-icons/fa";
 import { MdEmail, MdLocationOn, MdPhone } from "react-icons/md";
 import dynamic from "next/dynamic";
-import ContactAndSocialMedia2 from "./ContactAndSocial2";
+import ContactAndSocialMedia2 from "./ContactAndSocial";
 import { ImageWrapper, SummaryWrapper, TextWrapper } from "./Common1";
 import WorkExperience from "./WorkExperience";
 import ProjectsSection from "./ProjectSection";
@@ -48,7 +48,7 @@ const Draggable = dynamic(
   () => import("react-beautiful-dnd").then((mod) => mod.Draggable),
   { ssr: false }
 );
-const Template32 = () => {
+const Template39 = () => {
   const {
     resumeData,
     setResumeData,
@@ -129,15 +129,15 @@ const Template32 = () => {
         >
           <div className="p-4" style={{ backgroundColor: backgroundColorss }}>
             <div
-              style={{ borderBottom: `2px solid ${backgroundColorss}` }}
-              className={`mb-2 relative  h-auto p-12 ${
+              // style={{ borderBottom: `2px solid ${backgroundColorss}` }}
+              className={`mb-2 relative  h-[86px] ${
                 resumeData?.profilePicture
                   ? "flex justify-start gap-4 items-center"
                   : "flex justify-center items-center "
               } `}
             >
               {resumeData?.profilePicture && (
-                <div className="mt-20 absolute">
+                <div className="absolute top-[50px] ml-[70px]">
                   <ImageWrapper
                     src={resumeData.profilePicture}
                     alt="Profile Picture"
@@ -149,7 +149,7 @@ const Template32 = () => {
             </div>
           </div>
           <div className="p-4 mt-4">
-            <div className="mb-5">
+            <div className="mb-5 mt-[70px]">
               <ContactAndSocialMedia2
                 title="Contacts"
                 contactData={{
@@ -162,6 +162,7 @@ const Template32 = () => {
                 layout="column" // or "row"
                 contactClass=""
                 socialMediaClass=""
+                className=""
                 //   textColor="text-white"
               />
             </div>
@@ -210,7 +211,7 @@ const Template32 = () => {
           <div className="p-4" style={{ backgroundColor: backgroundColorss }}>
             <div
               style={{ borderBottom: `2px solid ${backgroundColorss}` }}
-              className={`mb-2 relative h-auto p-12 ${
+              className={`mb-2 relative h-[86px] ${
                 resumeData?.profilePicture
                   ? "flex justify-start gap-4 items-center"
                   : "flex justify-center items-center "
@@ -270,4 +271,4 @@ const Template32 = () => {
   );
 };
 
-export default Template32;
+export default Template39;

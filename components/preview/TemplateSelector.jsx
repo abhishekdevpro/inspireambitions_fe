@@ -35,12 +35,24 @@ import template31 from "./template/template29.png";
 import template32 from "./template/template29.png";
 import template33 from "./template/template29.png";
 import template34 from "./template/template29.png";
+import template35 from "./template/template45.png";
+import template36 from "./template/template46.png";
+import template37 from "./template/template47.png";
+import template38 from "./template/template48.png";
+import template39 from "./template/template49.png";
+import template40 from "./template/template50.png";
+import template41 from "./template/template46.png";
+import template42 from "./template/template47.png";
+import template43 from "./template/template48.png";
+import template44 from "./template/template49.png";
 import template45 from "./template/template45.png";
 import template46 from "./template/template46.png";
 import template47 from "./template/template47.png";
 import template48 from "./template/template48.png";
 import template49 from "./template/template49.png";
 import template50 from "./template/template50.png";
+import template51 from "./template/template50.png";
+import template52 from "./template/template50.png";
 import { BASE_URL } from "../Constant/constant";
 import axios from "axios";
 import Link from "next/link";
@@ -88,15 +100,27 @@ const TemplateSelector = ({
     { key: "template29", imageUrl: template29, pdfType: 2 },
     { key: "template30", imageUrl: template30, pdfType: 2 },
     { key: "template31", imageUrl: template31, pdfType: 4 },
-    { key: "template32", imageUrl: template32, pdfType: 4 },
+    { key: "template32", imageUrl: template32, pdfType: 2 },
     { key: "template33", imageUrl: template33, pdfType: 4 },
     { key: "template34", imageUrl: template34, pdfType: 4 },
+    { key: "template35", imageUrl: template35, pdfType: 4 },
+    { key: "template36", imageUrl: template36, pdfType: 4 },
+    { key: "template37", imageUrl: template37, pdfType: 4 },
+    { key: "template38", imageUrl: template38, pdfType: 4 },
+    { key: "template39", imageUrl: template39, pdfType: 4 },
+    { key: "template40", imageUrl: template40, pdfType: 4 },
+    { key: "template41", imageUrl: template41, pdfType: 4 },
+    { key: "template42", imageUrl: template42, pdfType: 4 },
+    { key: "template43", imageUrl: template43, pdfType: 4 },
+    { key: "template44", imageUrl: template44, pdfType: 4 },
     { key: "template45", imageUrl: template45, pdfType: 1 },
     { key: "template46", imageUrl: template46, pdfType: 3 },
     { key: "template47", imageUrl: template47, pdfType: 3 },
     { key: "template48", imageUrl: template48, pdfType: 2 },
     { key: "template49", imageUrl: template49, pdfType: 2 },
     { key: "template50", imageUrl: template50, pdfType: 1 },
+    { key: "template51", imageUrl: template51, pdfType: 2 },
+    { key: "template52", imageUrl: template52, pdfType: 1 },
   ];
 
   const templates = allTemplates;

@@ -41,12 +41,24 @@ import template31 from "../preview/template/template29.png";
 import template32 from "../preview/template/template29.png";
 import template33 from "../preview/template/template29.png";
 import template34 from "../preview/template/template29.png";
+import template35 from "../preview/template/template29.png";
+import template36 from "../preview/template/template29.png";
+import template37 from "../preview/template/template29.png";
+import template38 from "../preview/template/template29.png";
+import template39 from "../preview/template/template29.png";
+import template40 from "../preview/template/template29.png";
+import template41 from "../preview/template/template29.png";
+import template42 from "../preview/template/template29.png";
+import template43 from "../preview/template/template29.png";
+import template44 from "../preview/template/template29.png";
 import template45 from "../preview/template/template45.png";
 import template46 from "../preview/template/template46.png";
 import template47 from "../preview/template/template47.png";
 import template48 from "../preview/template/template48.png";
 import template49 from "../preview/template/template49.png";
 import template50 from "../preview/template/template50.png";
+import template51 from "../preview/template/template49.png";
+import template52 from "../preview/template/template50.png";
 import { BASE_URL } from "../Constant/constant";
 import { useTranslation } from "react-i18next";
 import { ResumeContext } from "../context/ResumeContext";
@@ -377,6 +389,66 @@ const TemplateStep = ({ onNext, onBack, onChange, value }) => {
       // hasPhoto: false,
     },
     {
+      key: "template35",
+      imageUrl: template35,
+      name: "Contemporary",
+      // hasPhoto: false,
+    },
+    {
+      key: "template36",
+      imageUrl: template36,
+      name: "Contemporary",
+      // hasPhoto: false,
+    },
+    {
+      key: "template37",
+      imageUrl: template37,
+      name: "Contemporary",
+      // hasPhoto: false,
+    },
+    {
+      key: "template38",
+      imageUrl: template38,
+      name: "Contemporary",
+      // hasPhoto: false,
+    },
+    {
+      key: "template39",
+      imageUrl: template39,
+      name: "Contemporary",
+      // hasPhoto: false,
+    },
+    {
+      key: "template40",
+      imageUrl: template40,
+      name: "Contemporary",
+      // hasPhoto: false,
+    },
+    {
+      key: "template41",
+      imageUrl: template41,
+      name: "Contemporary",
+      // hasPhoto: false,
+    },
+    {
+      key: "template42",
+      imageUrl: template42,
+      name: "Contemporary",
+      // hasPhoto: false,
+    },
+    {
+      key: "template43",
+      imageUrl: template43,
+      name: "Contemporary",
+      // hasPhoto: false,
+    },
+    {
+      key: "template44",
+      imageUrl: template44,
+      name: "Contemporary",
+      // hasPhoto: false,
+    },
+    {
       key: "template45",
       imageUrl: template45,
       name: "Contemporary",
@@ -400,6 +472,7 @@ const TemplateStep = ({ onNext, onBack, onChange, value }) => {
       name: "Contemporary",
       // hasPhoto: false,
     },
+
     {
       key: "template49",
       imageUrl: template49,
@@ -409,6 +482,18 @@ const TemplateStep = ({ onNext, onBack, onChange, value }) => {
     {
       key: "template50",
       imageUrl: template50,
+      name: "Contemporary",
+      // hasPhoto: false,
+    },
+    {
+      key: "template51",
+      imageUrl: template51,
+      name: "Contemporary",
+      // hasPhoto: false,
+    },
+    {
+      key: "template52",
+      imageUrl: template52,
       name: "Contemporary",
       // hasPhoto: false,
     },
