@@ -9,6 +9,7 @@ import cvletter2 from "../coverletter/cvimgs/cvletter2.png";
 import cvletter3 from "../coverletter/cvimgs/cvletter3.png";
 import cvletter4 from "../coverletter/cvimgs/cvletter4.png";
 import cvletter5 from "../coverletter/cvimgs/cvletter5.png";
+import cvletter6 from "../coverletter/cvimgs/cvletter5.png";
 import { CoverLetterContext } from "../../context/CoverLetterContext";
 import { BASE_URL } from "../../Constant/constant";
 import { useTranslation } from "react-i18next";
@@ -255,6 +256,12 @@ const CVSelector = ({ onNext, onBack, onChange, value }) => {
       key: "template5",
       imageUrl: cvletter5,
       name: t("cvSelector.template5"),
+      hasPhoto: true,
+    },
+     {
+      key: "template6",
+      imageUrl: cvletter6,
+      name: t("cvSelector.template6"),
       hasPhoto: true,
     },
   ];
