@@ -1,4 +1,5 @@
 import Image from "next/image";
+import uaeflag from "../../../public/assets/UAE-Flag.png";
 import usflag from "../../../public/assets/uslogo.png";
 import canadaflag from "../../../public/assets/canada.png";
 import indiaflag from "../../../public/assets/indiaflag.png";
@@ -10,6 +11,7 @@ import netherlandsflag from "../../../public/assets/netherlandsflag.png";
 import irelandflag from "../../../public/assets/irelandflag.png";
 import singaporeflag from "../../../public/assets/singaporeflag.png";
 const countries = [
+  { id: "uae", name: "United Arab Emirates", flag: uaeflag },
   { id: "us", name: "United States", flag: usflag },
   { id: "ca", name: "Canada", flag: canadaflag },
   { id: "in", name: "India", flag: indiaflag },
@@ -40,8 +42,8 @@ export default function CountrySelection({ onBack, onSelectCountry }) {
         <div className="py-10 px-4 w-full max-w-6xl">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {[
-              ...countries.filter((c) => ["us", "ca", "in"].includes(c.id)),
-              ...countries.filter((c) => !["us", "ca", "in"].includes(c.id)),
+              ...countries.filter((c) => ["uae", "ca", "in"].includes(c.id)),
+              ...countries.filter((c) => !["uae", "ca", "in"].includes(c.id)),
             ].map((country) => (
               <button
                 key={country.id}
