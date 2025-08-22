@@ -168,7 +168,7 @@
 //         <section className=" ">
 //           <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
 //             <div className="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
-//               <h2 className="mb-4 text-4xl tracking-tight font-extrabold  rounded-2xl text-teal-700 border p-3 border-gray">
+//               <h2 className="mb-4 text-4xl tracking-tight font-extrabold  rounded-2xl text-brandBlue border p-3 border-gray">
 //                 Choose a Plan, Which is right for you?
 //               </h2>
 //             </div>
@@ -963,14 +963,14 @@ function Home_five() {
         <section className=" ">
           <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
             <div className="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
-              <h2 className="mb-4 text-4xl tracking-tight font-extrabold  rounded-2xl text-teal-700 border p-3 border-gray">
+              <h2 className="mb-4 text-4xl tracking-tight font-extrabold  rounded-2xl text-brandBlue border p-3 border-gray">
                 Choose a Plan, Which is right for you?
               </h2>
             </div>
             <PricingSection />
             <div className="text-center">
               <button
-                className="rounded-full px-8 py-3 text-lg font-medium text-white bg-teal-700 rounded-xl hover:bg-teal-800 transition duration-300 "
+                className="rounded-full px-8 py-3 text-lg font-medium text-white bg-brandBlue rounded-xl hover:bg-teal-800 transition duration-300 "
                 onClick={() => router.push("/pricing")}
               >
                 View all plans

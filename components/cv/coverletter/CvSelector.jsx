@@ -9,11 +9,11 @@ import cvletter5 from "./cvimgs/cvletter5.png";
 import cvletter6 from "./cvimgs/cvletter6.png";
 import cvletter7 from "./cvimgs/cvletter7.png";
 import { useTranslation } from "react-i18next";
-import {toast} from "react-toastify";
+import { toast } from "react-toastify";
 import { BASE_URL } from "../../Constant/constant";
 import axios from "axios";
 import Link from "next/link";
-import { toast } from "react-toastify";
+
 const TemplateSelector = ({
   selectedTemplate,
   setSelectedTemplate,

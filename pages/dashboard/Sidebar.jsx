@@ -419,6 +419,26 @@ const Sidebar = ({ onClose }) => {
             <span>{t("skill_history")}</span>
           </Link>
         </li>
+        <li>
+          <Link
+            href="/dashboard/"
+            className={getLinkClassName("/dashboard/")}
+            onClick={onClose}
+          >
+            <span className="mr-2">📝</span>
+            <span>Practice Interview</span>
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="/dashboard/"
+            className={getLinkClassName("/dashboard/")}
+            onClick={onClose}
+          >
+            <span className="mr-2">📊</span>
+            <span>Interview History</span>
+          </Link>
+        </li>
         {/* <li>
           <Link
             href="/dashboard/paymentpage"

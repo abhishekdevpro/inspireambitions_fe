@@ -51,7 +51,7 @@ import template41 from "../preview/template/template29.png";
 import template42 from "../preview/template/template29.png";
 import template43 from "../preview/template/template29.png";
 import template44 from "../preview/template/template29.png";
-import template45 from "../preview/template/template45.png";
+import template45 from "../preview/template/template46.png";
 import template46 from "../preview/template/template46.png";
 import template47 from "../preview/template/template47.png";
 import template48 from "../preview/template/template48.png";
@@ -76,7 +76,7 @@ const TemplateStep = ({ onNext, onBack, onChange, value }) => {
   const [isSaved, setIsSaved] = useState(false);
   const { selectedLang } = useContext(ResumeContext);
   const [userData, setUserData] = useState(null);
-  const [selectedHexCode, setSelectedHexCode] = useState("#00008B"); // Default blue hex code
+  const [selectedHexCode, setSelectedHexCode] = useState("#00008B");
   const token =
     typeof window !== "undefined" ? localStorage.getItem("token") : null;
 

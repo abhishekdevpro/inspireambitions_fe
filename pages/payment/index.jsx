@@ -195,10 +195,10 @@
 //                   Contact our customer support team anytime. You can cancel your
 //                   subscription by email or online by reaching out to us at{" "}
 //                   <a
-//                     href="mailto:dummy@inspireambitions.in"
+//                     href="mailto:dummy@inspireambitions.com"
 //                     className="text-blue-600 hover:underline"
 //                   >
-//                     dummy@inspireambitions.in
+//                     dummy@inspireambitions.com
 //                   </a>
 //                   .”
 //                 </p>
@@ -482,10 +482,10 @@ export default function Payment() {
                   Contact our customer support team anytime. You can cancel your
                   subscription by email or online by reaching out to us at{" "}
                   <a
-                    href="mailto:dummy@inspireambitions.in"
+                    href="mailto:dummy@inspireambitions.com"
                     className="text-blue-600 hover:underline"
                   >
-                    dummy@inspireambitions.in
+                    dummy@inspireambitions.com
                   </a>
                   .”
                 </p>
