@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import { BASE_URL } from "../Constant/constant";
 import { useTranslation } from "react-i18next";
 import axiosInstance from "../utils/axiosInstance";
+import Cropper from "react-easy-crop";
 
 const PersonalInformation = () => {
   const { i18n, t } = useTranslation();
@@ -38,6 +39,13 @@ const PersonalInformation = () => {
     countryCodes: false,
   });
   const [resolvedFields, setResolvedFields] = useState({});
+
+  // Image cropping states
+  const [showCropModal, setShowCropModal] = useState(false);
+  const [cropImage, setCropImage] = useState(null);
+  const [crop, setCrop] = useState({ x: 0, y: 0 });
+  const [zoom, setZoom] = useState(1);
+  const [croppedAreaPixels, setCroppedAreaPixels] = useState(null);
 
   const dummyImage =
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlie4MsQ9pJSSKY7DoEpxn3uBAq-rT7in1sA&s";
@@ -357,8 +365,157 @@ const PersonalInformation = () => {
     }
   };
 
+  // Image cropping functions
+  const handleImageUpload = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        setCropImage(event.target.result);
+        setShowCropModal(true);
+        // Reset crop and zoom for new image
+        setCrop({ x: 0, y: 0 });
+        setZoom(1);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const onCropComplete = (croppedArea, croppedAreaPixels) => {
+    setCroppedAreaPixels(croppedAreaPixels);
+  };
+
+  const createImage = (url) =>
+    new Promise((resolve, reject) => {
+      const image = new Image();
+      image.addEventListener("load", () => resolve(image));
+      image.addEventListener("error", (error) => reject(error));
+      image.src = url;
+    });
+
+  const getCroppedImg = async (imageSrc, pixelCrop) => {
+    const image = await createImage(imageSrc);
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+
+    const maxSize = Math.max(image.width, image.height);
+    const safeArea = 2 * ((maxSize / 2) * Math.sqrt(2));
+
+    canvas.width = safeArea;
+    canvas.height = safeArea;
+
+    ctx.translate(safeArea / 2, safeArea / 2);
+    ctx.translate(-safeArea / 2, -safeArea / 2);
+
+    ctx.drawImage(
+      image,
+      safeArea / 2 - image.width * 0.5,
+      safeArea / 2 - image.height * 0.5
+    );
+
+    const data = ctx.getImageData(0, 0, safeArea, safeArea);
+
+    canvas.width = pixelCrop.width;
+    canvas.height = pixelCrop.height;
+
+    ctx.putImageData(
+      data,
+      0 - safeArea / 2 + image.width * 0.5 - pixelCrop.x,
+      0 - safeArea / 2 + image.height * 0.5 - pixelCrop.y
+    );
+
+    return new Promise((resolve) => {
+      canvas.toBlob(
+        (blob) => {
+          resolve(blob);
+        },
+        "image/jpeg",
+        0.9
+      );
+    });
+  };
+
+  const applyCrop = async () => {
+    if (!cropImage || !croppedAreaPixels) return;
+
+    try {
+      const croppedImage = await getCroppedImg(cropImage, croppedAreaPixels);
+      const croppedImageUrl = URL.createObjectURL(croppedImage);
+
+      // Update the resume data with cropped image
+      setResumeData((prev) => ({
+        ...prev,
+        profilePicture: croppedImageUrl,
+      }));
+
+      setShowCropModal(false);
+      setCropImage(null);
+      setCrop({ x: 0, y: 0 });
+      setZoom(1);
+      setCroppedAreaPixels(null);
+    } catch (error) {
+      console.error("Error cropping image:", error);
+    }
+  };
+
+  const cancelCrop = () => {
+    setShowCropModal(false);
+    setCropImage(null);
+    setCrop({ x: 0, y: 0 });
+    setZoom(1);
+    setCroppedAreaPixels(null);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
+  };
+
+  // Prevent browser navigation when crop modal is open
+  useEffect(() => {
+    const handleBeforeUnload = (e) => {
+      if (showCropModal) {
+        e.preventDefault();
+        e.returnValue = "";
+      }
+    };
+
+    const handleKeyDown = (e) => {
+      if (showCropModal && e.key === "Escape") {
+        e.preventDefault();
+        cancelCrop();
+      }
+    };
+
+    if (showCropModal) {
+      window.addEventListener("beforeunload", handleBeforeUnload);
+      document.addEventListener("keydown", handleKeyDown);
+    }
+
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [showCropModal]);
+
   return (
     <div className="flex flex-col gap-3 w-full items-center md:mt-10 md:px-10 max-h-[400px] overflow-y-auto">
+      {/* Progress Bar */}
+      <div className="w-full max-w-2xl mb-6">
+        <div className="flex items-center justify-between mb-2">
+          <span className="text-sm font-medium text-gray-700">
+            Step 1 of 9: Personal Information
+          </span>
+          <span className="text-sm text-gray-500">
+            {Math.round((1 / 9) * 100)}%
+          </span>
+        </div>
+        <div className="w-full bg-gray-200 rounded-full h-3">
+          <div
+            className="bg-teal-600 h-3 rounded-full transition-all duration-300 ease-in-out"
+            style={{ width: `${(1 / 9) * 100}%` }}
+          ></div>
+        </div>
+      </div>
+
       <h2 className="text-2xl md:text-3xl font-semibold text-black">
         {t("builder_forms.personal_info.details_info")}
       </h2>
@@ -389,9 +546,93 @@ const PersonalInformation = () => {
             name="profileImage"
             accept="image/*"
             className="bg-gray-300 text-sm text-black py-2 px-4 rounded-md cursor-pointer hover:bg-gray-400 transition-colors"
-            onChange={handleProfilePicture}
+            onChange={handleImageUpload}
           />
         </div>
+
+        {/* Image Crop Modal */}
+        {showCropModal && (
+          <div
+            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+            onClick={(e) => {
+              if (e.target === e.currentTarget) {
+                cancelCrop();
+              }
+            }}
+          >
+            <div className="bg-white rounded-lg p-6 max-w-2xl w-full mx-4">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-lg font-semibold text-black">
+                  Adjust Profile Picture
+                </h3>
+                <button
+                  onClick={cancelCrop}
+                  className="text-gray-500 hover:text-gray-700"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
+
+              <div className="mb-4 flex gap-2 flex-wrap">
+                <div className="flex items-center gap-2 px-3 py-2 bg-gray-100 rounded-md">
+                  <span className="text-sm text-gray-600">
+                    Drag to move • Pinch to zoom
+                  </span>
+                </div>
+                <div className="flex items-center gap-2 px-3 py-2 bg-blue-100 rounded-md">
+                  <span className="text-sm text-blue-600">
+                    Zoom: {Math.round(zoom * 100)}%
+                  </span>
+                </div>
+              </div>
+
+              <div className="relative w-full h-80 bg-gray-100 rounded-lg overflow-hidden">
+                <Cropper
+                  image={cropImage}
+                  crop={crop}
+                  zoom={zoom}
+                  aspect={1}
+                  onCropChange={setCrop}
+                  onZoomChange={setZoom}
+                  onCropComplete={onCropComplete}
+                  showGrid={true}
+                  cropSize={{ width: 200, height: 200 }}
+                  style={{
+                    containerStyle: {
+                      width: "100%",
+                      height: "100%",
+                      backgroundColor: "#f3f4f6",
+                    },
+                    cropAreaStyle: {
+                      border: "2px solid white",
+                      boxShadow: "0 0 0 9999px rgba(0, 0, 0, 0.5)",
+                    },
+                    mediaStyle: {
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "contain",
+                    },
+                  }}
+                />
+              </div>
+
+              <div className="flex justify-end gap-3 mt-4">
+                <button
+                  onClick={cancelCrop}
+                  className="px-4 py-2 text-gray-600 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
+                >
+                  Cancel
+                </button>
+                <button
+                  onClick={applyCrop}
+                  className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors"
+                >
+                  Apply
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
 
         <div className="flex flex-col gap-4 w-full max-w-xl">
           {formFields.map(
