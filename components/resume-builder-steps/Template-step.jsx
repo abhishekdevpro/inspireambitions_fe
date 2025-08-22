@@ -76,7 +76,7 @@ const TemplateStep = ({ onNext, onBack, onChange, value }) => {
   const [isSaved, setIsSaved] = useState(false);
   const { selectedLang } = useContext(ResumeContext);
   const [userData, setUserData] = useState(null);
-  const [selectedHexCode, setSelectedHexCode] = useState("#00008B"); // Default blue hex code
+  const [selectedHexCode, setSelectedHexCode] = useState("#00008B");
   const token =
     typeof window !== "undefined" ? localStorage.getItem("token") : null;
 

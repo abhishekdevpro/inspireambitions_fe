@@ -66,7 +66,6 @@ const TemplateSelector = ({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [templateId, setTemplateId] = useState(selectedTemplate);
   const [userData, setUserData] = useState(null);
-  // Default PDF type
 
   const allTemplates = [
     { key: "template1", imageUrl: template1, pdfType: 1 },
