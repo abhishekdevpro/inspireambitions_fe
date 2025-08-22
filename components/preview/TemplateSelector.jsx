@@ -35,7 +35,7 @@ import template31 from "./template/template29.png";
 import template32 from "./template/template29.png";
 import template33 from "./template/template29.png";
 import template34 from "./template/template29.png";
-import template35 from "./template/template45.png";
+import template35 from "./template/template46.png";
 import template36 from "./template/template46.png";
 import template37 from "./template/template47.png";
 import template38 from "./template/template48.png";
@@ -45,7 +45,7 @@ import template41 from "./template/template46.png";
 import template42 from "./template/template47.png";
 import template43 from "./template/template48.png";
 import template44 from "./template/template49.png";
-import template45 from "./template/template45.png";
+import template45 from "./template/template46.png";
 import template46 from "./template/template46.png";
 import template47 from "./template/template47.png";
 import template48 from "./template/template48.png";
@@ -66,7 +66,6 @@ const TemplateSelector = ({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [templateId, setTemplateId] = useState(selectedTemplate);
   const [userData, setUserData] = useState(null);
-  // Default PDF type
 
   const allTemplates = [
     { key: "template1", imageUrl: template1, pdfType: 1 },

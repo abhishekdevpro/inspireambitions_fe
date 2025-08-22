@@ -234,7 +234,7 @@ const PricingSection = () => {
           {planTypes.map((planType) => (
             <div
               key={planType}
-              className="bg-black rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden"
+              className="bg-brandBlue rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden"
             >
               <div className="p-6 border-b border-gray-100">
                 <h3 className="text-xl font-bold text-white mb-2">
@@ -277,7 +277,7 @@ const PricingSection = () => {
                 </ul>
 
                 <button
-                  className="w-full mt-8 bg-teal-700 hover:bg-teal-800 text-white font-medium py-3 px-4 rounded-lg transition duration-300"
+                  className="w-full mt-8 bg-white hover:bg-brandBlue hover:text-white text-black font-medium py-3 px-4 rounded-full transition duration-300"
                   onClick={() => handleClick(planType)}
                 >
                   {t(`pricing.${planType}.buttonText`)}

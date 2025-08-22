@@ -149,7 +149,7 @@ function PrivacyPolicy() {
               href="mailto:career@ciblJob.fr"
               className="text-blue-600 underline"
             >
-              dummy@inspireambitions.in
+              dummy@inspireambitions.com
             </a>
           </p>
         </div>

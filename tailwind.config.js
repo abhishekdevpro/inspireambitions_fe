@@ -8,10 +8,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        peach: "#f6d6c8",
-        beige: "#f5f2ef",
-        rosegold: "#d4a373",
-        charcoal: "#222222",
+        brandBlue: "#007BFF", // Primary blue
+        brandBlueDark: "#1A73E8", // Slightly darker sh
       },
       fontFamily: {
         heading: ["Playfair Display", "serif"],
