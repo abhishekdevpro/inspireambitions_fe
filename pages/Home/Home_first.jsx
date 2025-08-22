@@ -37,7 +37,7 @@
 //           <div className="flex justify-center md:hidden">
 //             <Link
 //               href="/Home/FAQ/Contact"
-//               className="text-black bg-red-300 px-3 py-4 rounded-3xl font-bold text-center"
+//               className="text-white bg-red-300 px-3 py-4 rounded-3xl font-bold text-center"
 //             >
 //               Contact us
 //             </Link>
@@ -171,12 +171,12 @@ function Home_first() {
 
   return (
     <>
-      <div className="bg-gray-100 pt-10 w-full overflow-hidden">
+      <div className="bg-brandBlue pt-10 w-full overflow-hidden">
         <div className="container mx-auto">
           <div className="flex justify-center md:hidden">
             <Link
               href="/Home/FAQ/Contact"
-              className="text-black bg-red-300 px-3 py-4 rounded-3xl font-bold text-center"
+              className="text-white bg-red-300 px-3 py-4 rounded-3xl font-bold text-center"
             >
               {t("contact_us")} {/* Use translation key */}
             </Link>
@@ -186,12 +186,12 @@ function Home_first() {
             {/* Content Section */}
             <div className="px-3 py-3 w-full md:w-[500px]">
               <div className="flex flex-col gap-4">
-                <div className="font-sans text-center text-2xl md:text-5xl font-bold leading-tight">
+                <div className="font-sans text-center text-2xl md:text-5xl font-bold leading-tight text-white">
                   Introducing Our{" "}
-                  <span className="text-gray-800 font-normal">
+                  <span className="text-white font-normal">
                     Smart AI-Powered Resume Builder
                   </span>{" "}
-                  <span className="text-black font-extrabold">
+                  <span className="text-white font-extrabold">
                     &quot;INSPIRE AMBITIONS&quot;
                   </span>
                 </div>
@@ -207,7 +207,7 @@ function Home_first() {
                       isAuthenticated ? "/dashboard/resume-builder" : "/login2"
                     }
                   >
-                    <button className="text-white bg-black text-lg px-6 py-2 rounded-full font-bold hover:shadow-2xl hover:shadow-slate-500">
+                    <button className="text-black bg-white text-lg px-6 py-2 rounded-full font-bold hover:shadow-2xl hover:shadow-slate-500">
                       {t("build_resume")} {/* Use translation key */}
                     </button>
                   </Link>

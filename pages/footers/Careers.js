@@ -116,7 +116,7 @@
 //           of a dynamic, growth-oriented team, we’d love to hear from you. To
 //           apply for a position at INSPIRE AMBITIONS, please send your resume and a cover
 //           letter to{" "}
-//           <a href="mailto:dummy@inspireambitions.in" className="text-blue-500">
+//           <a href="mailto:dummy@inspireambitions.com" className="text-blue-500">
 //             career@INSPIRE AMBITIONS.ca
 //           </a>
 //           .

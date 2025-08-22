@@ -176,7 +176,7 @@
 //           conditions, please contact us at:
 //           <br />
 //           Email:{" "}
-//           <a href="mailto:dummy@inspireambitions.in" className="text-blue-500">
+//           <a href="mailto:dummy@inspireambitions.com" className="text-blue-500">
 //             bonjour@createmyresume.ca
 //           </a>
 //         </p>
@@ -219,8 +219,8 @@
 //           {t.contact}:
 //           <br />
 //           Email:{" "}
-//           <a href="mailto:dummy@inspireambitions.in" className="text-blue-500">
-//             dummy@inspireambitions.in
+//           <a href="mailto:dummy@inspireambitions.com" className="text-blue-500">
+//             dummy@inspireambitions.com
 //           </a>
 //         </p>
 //       </div>
@@ -266,8 +266,8 @@ function TermsandConditions() {
         <p className="text-base sm:text-lg">
           {/* {termsData.contact}: */}
           Email:{" "}
-          <a href="dummy@inspireambitions.in" className="text-blue-500">
-            dummy@inspireambitions.in
+          <a href="dummy@inspireambitions.com" className="text-blue-500">
+            dummy@inspireambitions.com
           </a>
         </p>
       </div>

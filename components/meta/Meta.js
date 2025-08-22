@@ -1,7 +1,7 @@
 import Head from "next/head";
 
 export default function Meta({ title, keywords, description }) {
-  const homepage = "https://inspireambitions.in";
+  const homepage = "https://inspireambitions.com";
   const logo = "/assets/logo.png";
   const favicon = "/favicon.ico";
 

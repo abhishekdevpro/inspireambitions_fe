@@ -51,7 +51,7 @@ import template41 from "../preview/template/template29.png";
 import template42 from "../preview/template/template29.png";
 import template43 from "../preview/template/template29.png";
 import template44 from "../preview/template/template29.png";
-import template45 from "../preview/template/template45.png";
+import template45 from "../preview/template/template46.png";
 import template46 from "../preview/template/template46.png";
 import template47 from "../preview/template/template47.png";
 import template48 from "../preview/template/template48.png";
