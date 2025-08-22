@@ -51,7 +51,7 @@
 import React, { useContext } from "react";
 import { ResumeContext } from "../context/ResumeContext";
 
-const Language = ({ title, languages, headerColor, newlayout = "default" }) => {
+const Language = ({ title, languages, headerColor, newlayout = "default", Hidden }) => {
   const { backgroundColorss } = useContext(ResumeContext);
   if (newlayout === "timeline") {
     return (
@@ -121,7 +121,7 @@ const Language = ({ title, languages, headerColor, newlayout = "default" }) => {
             }}
             contentEditable
             suppressContentEditableWarning
-            className="text-xl font-semibold mb-1"
+            className={`text-xl font-semibold mb-1 ${Hidden}`}
           >
             {title}
           </h2>

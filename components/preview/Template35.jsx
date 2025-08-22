@@ -44,10 +44,10 @@ const Template35 = () => {
 
   return (
     <div
-      className="flex flex-col gap-4"
+      className="flex flex-col gap-4 mx-4 my-2"
       style={{ fontFamily: `${selectedFont}` }}
     >
-      <div className="flex justify-between gap-4">
+      <div className="flex justify-between gap-5">
         <div className="">
           <TextWrapper
             name={resumeData.name}
@@ -67,7 +67,7 @@ const Template35 = () => {
             layout="col" // or "row"
             contactClass=""
             socialMediaClass=""
-            className="items-start justify-start"
+            className="items-start justify-start mt-5"
           />
         </div>
 

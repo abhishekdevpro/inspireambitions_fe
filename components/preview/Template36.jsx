@@ -74,7 +74,7 @@ const Template36 = () => {
     { name: "website", icon: <CgWebsite /> },
   ];
   return (
-    <div className="   " style={{ fontFamily: `${selectedFont}` }}>
+    <div className="m-3" style={{ fontFamily: `${selectedFont}` }}>
       {/* <div class="flex text-center justify-center items-center">
           
         <div className="mb-3 pt-2.5	w-2/3 text-left">

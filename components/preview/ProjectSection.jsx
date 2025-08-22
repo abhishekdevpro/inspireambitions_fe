@@ -12,7 +12,7 @@ const Draggable = dynamic(
   () => import("react-beautiful-dnd").then((mod) => mod.Draggable),
   { ssr: false }
 );
-const ProjectsSection = ({ resumeData, headerColor, layout = "default" }) => {
+const ProjectsSection = ({ resumeData, headerColor, layout = "default", Hidden}) => {
   if (!resumeData?.projects || resumeData.projects.length === 0) {
     return null;
   }
@@ -20,7 +20,7 @@ const ProjectsSection = ({ resumeData, headerColor, layout = "default" }) => {
   // console.log(resumeData?.projects ,"llllll");
   if (layout === "timeline") {
     return (
-      <div className={`mb-1 `}>
+      <div className={`mb-1`}>
         <div className="flex">
           {/* Left Column - Title */}
           <div className="w-1/4">
@@ -32,7 +32,7 @@ const ProjectsSection = ({ resumeData, headerColor, layout = "default" }) => {
               }}
               contentEditable
               suppressContentEditableWarning
-              className="text-xl font-semibold mb-6"
+              className="text-sm font-semibold mb-6 "
             >
               Projects
             </h2>
@@ -158,7 +158,7 @@ const ProjectsSection = ({ resumeData, headerColor, layout = "default" }) => {
       {(provided) => (
         <div {...provided.droppableProps} ref={provided.innerRef}>
           <h2
-            className="text-xl font-semibold mb-1 border-b-2 border-gray-300 editable"
+            className={`text-xl font-semibold mb-1 border-b-2 border-gray-300 editable ${Hidden}`}
             contentEditable
             suppressContentEditableWarning
             style={{

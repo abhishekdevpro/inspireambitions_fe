@@ -97,6 +97,7 @@ const Certification = ({
   className = "",
   itemClassNames = {},
   newlayout = "default",
+  Hidden
 }) => {
   const { backgroundColorss } = useContext(ResumeContext);
 
@@ -200,7 +201,7 @@ const Certification = ({
             }}
             className={`text-xl font-semibold mb-2 ${
               itemClassNames.title || ""
-            }`}
+            } ${Hidden}`}
             contentEditable
             suppressContentEditableWarning
           >

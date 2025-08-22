@@ -340,18 +340,18 @@ const Template34 = () => {
   return (
     <div
       ref={templateRef}
-      className=""
+      className="mx-5"
       style={{ fontFamily: `${selectedFont}`, borderTop: `3px solid ${backgroundColorss}` }}
     >
 
-      <div className="header text-center mb-6 mt-6 [&>div]:justify-center">
+      <div className="header text-center mb-6 mt-6">
         <TextWrapper
-          name={resumeData.name.toUpperCase()}
-          position={resumeData.position.toUpperCase()}
-          nameclassName="!text-2xl after:content-['_|']"
-          positionclassName="!text-2xl before:content-['|_'] !text-black"
+          name={resumeData.name}
+          position={resumeData.position}
+          nameclassName=""
+          positionclassName=""
           //headerColor={backgroundColorss}
-          orientation="row" // Use "column" for stacked layout
+          orientation="column" // Use "column" for stacked layout
         />
         <div className="mt-6">
           <ContactAndSocialMedia
@@ -375,7 +375,8 @@ const Template34 = () => {
   summary={resumeData.summary}
   headerColor={"black"}
   editable={true}
-  className="mt-4 [&>h2]:hidden"
+  className="mt-4"
+  Hidden="hidden"
 />
     <SectionDivider title="SKILLS" backgroundColor={backgroundColorss} />
      <section className="skills mb-6"> 
@@ -416,14 +417,15 @@ const Template34 = () => {
               layout="row"
               educationData={resumeData?.education}
               headerColor={backgroundColorss}
-              className="[&>h2]:hidden"
+              className=""
+              Hidden="hidden"
             />
         </div>
       </section>
 
-      <section className="education mb-6">
-        {resumeData.education.length > 0 && (
-          <div className="mb-1">
+      <section className="mb-6">
+        {/* {resumeData.education.length > 0 && ( */}
+          {/* <div className="mb-1"> */}
             {/* <h2 className="text-lg font-bold mb-2.5 uppercase border-b border-black pb-0.5" style={{ color: headerColor }}>Education</h2> */}
             {/* {resumeData.education.map((item, index) => (
             <div key={index} className="mb-1">
@@ -438,10 +440,8 @@ const Template34 = () => {
         <ProjectsSection
                 resumeData={resumeData}
                 headerColor={backgroundColorss}
-                Hidden="hidden"
+                Hidden = "hidden"
             />
-          </div>
-        )}
       </section>
       <SectionDivider title="CERTIFICATION" backgroundColor={backgroundColorss} />
       <section className="certification mb-6">
@@ -450,7 +450,8 @@ const Template34 = () => {
           certifications={resumeData.certifications}
           hasBullet={false}
           headerColor={"black"}
-          className="[&>h2]:hidden"
+          className=""
+          Hidden="hidden"
         />
       </section>
       <SectionDivider title="LANGUAGE" backgroundColor={backgroundColorss} />
