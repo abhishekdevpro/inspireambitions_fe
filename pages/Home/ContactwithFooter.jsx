@@ -35,7 +35,7 @@ export default function ContactFooter() {
       <section className="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12">
         {/* Left Side */}
         <div>
-          <h2 className="text-3xl font-bold leading-snug mb-6">
+          <h2 className="text-4xl md:text-[42px] font-bold leading-snug mb-6">
             Get Real Estimates And Ideal Solutions For Your Project.
           </h2>
           <ul className="space-y-3 text-gray-600">

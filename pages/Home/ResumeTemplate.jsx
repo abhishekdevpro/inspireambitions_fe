@@ -78,7 +78,7 @@ export default function ResumeTemplate() {
   return (
     <div className="bg-brandBlue py-20 overflow-hidden relative">
       <div className="text-center mb-12">
-        <h2 className="text-4xl md:text-[50px] font-bold text-white leading-tight mb-4">
+        <h2 className="text-4xl md:text-[42px] font-bold text-white leading-tight mb-4">
           Explore Our Collection of Modern Resume Templates
         </h2>
         <p className="text-white/80 text-lg">

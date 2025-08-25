@@ -38,7 +38,7 @@ export default function HomeFAQ() {
 
   return (
     <div className="max-w-7xl mx-auto py-12 px-4">
-      <h2 className="text-3xl font-bold text-center mb-8">
+      <h2 className="text-4xl md:text-[42px] font-bold text-center mb-8">
         Frequently <span className="text-brandBlue">Asked Questions</span>
       </h2>
       <div className="space-y-4">

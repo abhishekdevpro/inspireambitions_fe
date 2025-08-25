@@ -48,7 +48,7 @@ function Home_first() {
             {/* Content Section */}
             <div className=" py-3 w-full md:w-[500px]">
               <div className="flex flex-col gap-4">
-                <div className="font-sans  text-2xl md:text-5xl font-bold leading-tight text-white">
+                <div className="font-sans  text-4xl md:text-[42px] font-bold leading-tight text-white">
                   Build a Job-Winning Resume in Minutes with AI
                 </div>
 

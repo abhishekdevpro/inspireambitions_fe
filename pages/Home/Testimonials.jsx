@@ -313,7 +313,7 @@ export default function Testimonials() {
       <div className="text-center mb-12">
         {/* Section Title */}
 
-        <h2 className="text-4xl md:text-5xl font-bold">
+        <h2 className="text-4xl md:text-[42px] font-bold">
           What Our <span className="text-brandBlue">Clients</span> Have To Say
         </h2>
       </div>

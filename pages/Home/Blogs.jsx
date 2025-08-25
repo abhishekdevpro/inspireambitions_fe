@@ -51,7 +51,7 @@ export default function Blogs() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Title */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold">
+          <h2 className="text-4xl md:text-[42px] font-bold">
             <span className="text-black">From</span>{" "}
             <span className="text-brandBlue">The Blog</span>
           </h2>
