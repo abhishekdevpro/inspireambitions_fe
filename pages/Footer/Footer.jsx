@@ -59,7 +59,7 @@
 //             </div> */}
 
 //             <div className="w-full md:w-auto mb-6 md:mb-0">
-//               <h2 className="text-lg font-semibold text-[#00b38d]">
+//               <h2 className="text-lg font-semibold text-brandBlue">
 //                 Get Our Weekly
 //               </h2>
 //               <form
@@ -87,7 +87,7 @@
 //           <br />
 //           <div className="flex flex-wrap justify-around">
 //             <div className="w-full md:w-auto mb-6 md:mb-0" id="footer">
-//               <h2 className="text-lg font-bold text-[#00b38d]">Cibli Job </h2>
+//               <h2 className="text-lg font-bold text-brandBlue">Cibli Job </h2>
 //               <ul>
 //                 <li>
 //                   <Link href="/footers/Aboutus">
@@ -112,7 +112,7 @@
 //               </ul>
 //             </div>
 //             <div className="w-full md:w-auto mb-6 md:mb-0">
-//               <h2 className="text-lg font-bold text-[#00b38d]">Support</h2>
+//               <h2 className="text-lg font-bold text-brandBlue">Support</h2>
 //               <ul>
 //                 <li>
 //                   <Link href="/footers/Salarytools">
@@ -132,7 +132,7 @@
 //               </ul>
 //             </div>
 //             <div className="w-full md:w-auto mb-6 md:mb-0">
-//               <h2 className="text-lg font-bold text-[#00b38d]">
+//               <h2 className="text-lg font-bold text-brandBlue">
 //                 Scope & Products
 //               </h2>
 //               <ul>
@@ -164,7 +164,7 @@
 //               </ul>
 //             </div>
 //             <div className="w-full md:w-auto mb-6 md:mb-0">
-//               <h2 className="text-lg font-bold text-[#00b38d]">Ai Resources</h2>
+//               <h2 className="text-lg font-bold text-brandBlue">Ai Resources</h2>
 //               <ul>
 //                 <li>
 //                   <Link href="/footers/AIEnhancedResumeAccuracy">
@@ -186,7 +186,7 @@
 //           </div>
 //         </div>
 //         <div className="container text-base md:mx-auto text-center border-t border-white pt-6 mt-6">
-//           <p className="text-[#00b38d] text-right">
+//           <p className="text-brandBlue text-right">
 //             &copy; Copyright By CibliJob.fr All Rights Reserved
 //           </p>
 //         </div>
@@ -209,6 +209,18 @@ import { toast } from "react-toastify";
 import { ResumeContext } from "../../components/context/ResumeContext";
 import axiosInstance from "../../components/utils/axiosInstance";
 import SupportPopup from "./supportpopup";
+import fb from "./footer_fb_icon.png";
+import insta from "./footer_insta_icon.png";
+import linkedin from "./footer_linkedine_icon.png";
+import twitter from "./footer_twitter_icon.png";
+import yt from "./footer_yt_icon.png";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaTwitterSquare,
+  FaYoutube,
+} from "react-icons/fa";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -246,7 +258,7 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="bg-gray-300 text-black py-8" id="footerbg">
+      <footer className="bg-black text-[#f5f5f5] py-8" id="footerbg">
         <div className="container mx-auto flex flex-col gap-7 px-6">
           {/* Top Section */}
           <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-6 md:px-[65px]">
@@ -266,7 +278,7 @@ const Footer = () => {
 
             {/* Subscribe */}
             <div className="text-center md:text-left w-full md:w-auto">
-              <h2 className="text-lg font-semibold text-[#00b38d]">
+              <h2 className="text-lg font-semibold text-brandBlue">
                 {t("footer.get_our_weekly")}
               </h2>
               <form
@@ -290,7 +302,7 @@ const Footer = () => {
                 </button> */}
                 <button
                   type="submit"
-                  className="w-full sm:w-auto px-6 py-2 rounded-md bg-white text-black hover:bg-green-500 transition-colors duration-200"
+                  className="w-full sm:w-auto px-6 py-2 rounded-md bg-white text-black hover:bg-brandBlue hover:text-white transition-colors duration-200"
                 >
                   {t("footer.subscribe")}
                 </button>
@@ -302,7 +314,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row flex-wrap justify-center md:justify-around text-center md:text-left gap-6">
             {/* Section 1 */}
             <div>
-              <h2 className="text-lg font-bold text-[#00b38d]">
+              <h2 className="text-lg font-bold text-brandBlue">
                 {t("footer.cibli_job")}
               </h2>
               <ul className="mt-2 space-y-1">
@@ -320,13 +332,13 @@ const Footer = () => {
 
             {/* Section 2 */}
             <div>
-              <h2 className="text-lg font-bold text-[#00b38d]">
+              <h2 className="text-lg font-bold text-brandBlue">
                 {/* {t("footer.support")} */}
-                About Us
+                Quick Links
               </h2>
               <div>
                 {/* <button
-                  className="bg-blue-500 text-white px-4 py-2 rounded"
+                  className="bg-blue-500 text-[#f5f5f5] px-4 py-2 rounded"
                   onClick={() => setShowPopup(true)}
                 >
                   Open Support Form
@@ -366,7 +378,7 @@ const Footer = () => {
 
             {/* Section 3 */}
             <div>
-              <h2 className="text-lg font-bold text-[#00b38d]">
+              <h2 className="text-lg font-bold text-brandBlue">
                 {t("footer.scope_products")}
               </h2>
               <ul className="mt-2 space-y-1">
@@ -388,7 +400,7 @@ const Footer = () => {
 
             {/* Section 4 */}
             <div>
-              <h2 className="text-lg font-bold text-[#00b38d]">
+              <h2 className="text-lg font-bold text-brandBlue">
                 {t("footer.ai_resources")}
               </h2>
               <ul className="mt-2 space-y-1">
@@ -412,8 +424,27 @@ const Footer = () => {
           </div>
 
           {/* Copyright */}
-          <div className="border-t border-white pt-6 mt-6 text-center">
-            <p className="text-[#00b38d]">{t("footer.copyright")}</p>
+        </div>
+        <div className="mt-10 border-t border-white pt-6 flex flex-col md:flex-row justify-between items-center max-w-6xl mx-auto px-6">
+          <p className="text-sm">
+            © 2025 Inspireambitions.In All Rights Reserved
+          </p>
+          <div className="flex gap-4 mt-4 md:mt-0">
+            <Link href="">
+              <Image src={fb} alt="fb" height={30} width={30} />
+            </Link>
+            <Link href="">
+              <Image src={insta} alt="insta" height={30} width={30} />
+            </Link>
+            <Link href="">
+              <Image src={linkedin} alt="linkedin" height={30} width={30} />
+            </Link>
+            <Link href="">
+              <Image src={twitter} alt="twitter" height={30} width={30} />
+            </Link>
+            <Link href="">
+              <Image src={yt} alt="yt" height={30} width={30} />
+            </Link>
           </div>
         </div>
       </footer>

@@ -858,7 +858,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import React from "react";
-
+import Button from "../../components/buttonUIComponent";
 import Link from "next/link";
 import logo from "../Home/modallogo.png";
 // import logo from "../Home/Images/modallogo.jpg";
@@ -874,6 +874,8 @@ import { PoundSterling } from "lucide-react";
 import PricingSection from "../../components/Pricing/PricingPlan";
 import { useRouter } from "next/router";
 import TestimonialSlider from "../../components/TestimonialSlider";
+import HomeFAQ from "./Home-Faq";
+import ContactFooter from "./ContactwithFooter";
 function Home_five() {
   const router = useRouter();
   const [showModal, setShowModal] = useState(false);
@@ -963,24 +965,26 @@ function Home_five() {
         <section className=" ">
           <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
             <div className="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
-              <h2 className="mb-4 text-4xl tracking-tight font-extrabold  rounded-2xl text-brandBlue border p-3 border-gray">
-                Choose a Plan, Which is right for you?
+              <h2 className="text-4xl md:text-[42px] font-bold">
+                Choose A Plan,
+                <span className="text-brandBlue">Which Is Right For You</span>
               </h2>
             </div>
             <PricingSection />
             <div className="text-center">
-              <button
-                className="rounded-full px-8 py-3 text-lg font-medium text-white bg-brandBlue rounded-xl hover:bg-teal-800 transition duration-300 "
+              <Button
+                className=" px-8 py-3 mt-8 text-white bg-brandBlue rounded-xl hover:bg-darkBlue  "
                 onClick={() => router.push("/pricing")}
               >
                 View all plans
-              </button>
+              </Button>
             </div>
           </div>
         </section>
       </div>
       <div>
-        <TestimonialSlider />
+        <HomeFAQ />
+        <ContactFooter />
       </div>
     </>
   );
