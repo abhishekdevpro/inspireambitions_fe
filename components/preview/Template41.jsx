@@ -44,7 +44,7 @@ const Template41 = () => {
 
   return (
     <div
-      className="flex flex-col gap-4 mt-[70px]"
+      className="flex flex-col gap-4 mt-[70px] p-4"
       style={{ fontFamily: `${selectedFont}` }}
     >
       <div className="flex justify-between gap-4">

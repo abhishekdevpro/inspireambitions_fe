@@ -75,10 +75,10 @@ const Template37 = () => {
   return (
     <div
       ref={templateRef}
-      className=""
+      className="p-4"
       style={{ fontFamily: `${selectedFont}` }}
     >
-      <header className="    p-4">
+      <header className="">
         <TextWrapper
           name={resumeData.name}
           position={resumeData.position}

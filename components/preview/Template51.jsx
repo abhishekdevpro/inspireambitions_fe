@@ -95,6 +95,9 @@ const Template51 = () => {
             headerColor={"black"}
             editable={true} // Set to false if editing is not required
             className="mt-4"
+            titleAlign="text-left"
+            titleColor="white"
+            titlePadding="p-1"
           />
         </div>
 
@@ -102,7 +105,7 @@ const Template51 = () => {
           <WorkExperience34
             itemClassNames={{
               title:
-                "text-lg font-bold mb-1 border-b-2 border-gray-300 editable",
+                "text-lg font-bold mb-1 border-b-2 border-gray-300 editable p-1",
               company: "font-semibold",
               position: "",
               location: "",
@@ -120,7 +123,7 @@ const Template51 = () => {
             </div>
           </div>
         </div>
-        <div className="mb-8 flex justify-evenly">
+        <div className="mb-8 flex justify-between">
           <EducationSection
             itemClassNames={{
               school: "text-gray-600",
@@ -131,6 +134,7 @@ const Template51 = () => {
             educationData={resumeData?.education}
             layout="row"
             bgHeader={backgroundColorss}
+            titlePadding="p-1"
           />
 
           <div className="mb-8 ">
@@ -140,6 +144,7 @@ const Template51 = () => {
               hasBullet={true}
               headerColor={"black"}
               bgHeader={backgroundColorss}
+              titlePadding="p-1"
             />
           </div>
         </div>
@@ -170,8 +175,9 @@ const Template51 = () => {
             languages={resumeData.languages}
             // headerColor={"black"}
             headerBackground={backgroundColorss}
-            headerColor="white"
+            headerColor="black"
             textColor={"black"}
+            titlePadding="p-1"
           />
         </div>
       </div>

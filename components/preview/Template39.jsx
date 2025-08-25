@@ -130,14 +130,14 @@ const Template39 = () => {
           <div className="p-4" style={{ backgroundColor: backgroundColorss }}>
             <div
               // style={{ borderBottom: `2px solid ${backgroundColorss}` }}
-              className={`mb-2 relative  h-[86px] ${
+              className={`mb-2 relative  h-20 ${
                 resumeData?.profilePicture
                   ? "flex justify-start gap-4 items-center"
                   : "flex justify-center items-center "
               } `}
             >
               {resumeData?.profilePicture && (
-                <div className="absolute top-[50px] ml-[70px]">
+                <div className="absolute top-4 ml-16">
                   <ImageWrapper
                     src={resumeData.profilePicture}
                     alt="Profile Picture"
@@ -211,7 +211,7 @@ const Template39 = () => {
           <div className="p-4" style={{ backgroundColor: backgroundColorss }}>
             <div
               style={{ borderBottom: `2px solid ${backgroundColorss}` }}
-              className={`mb-2 relative h-[86px] ${
+              className={`mb-2 relative h-20 ${
                 resumeData?.profilePicture
                   ? "flex justify-start gap-4 items-center"
                   : "flex justify-center items-center "

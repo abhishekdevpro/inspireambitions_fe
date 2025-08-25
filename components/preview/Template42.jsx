@@ -44,7 +44,7 @@ const Template42 = () => {
 
   return (
     <div
-      className="flex flex-col gap-4"
+      className="flex flex-col gap-4 p-5"
       style={{ fontFamily: `${selectedFont}` }}
     >
       <div className="flex justify-between gap-4">
@@ -119,7 +119,7 @@ const Template42 = () => {
           />
         </div>
 
-        <div className="ml-[120px]">
+        <div className="ml-12">
           <WorkExperience
             itemClassNames={{
               title:

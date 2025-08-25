@@ -110,6 +110,9 @@ const SummaryWrapper = ({
   editable = true,
   className = "",
   summaryclassName = "",
+  titleColor = "",
+  titleAlign = "text-center",
+  titlePadding = ""
 }) => {
   const { backgroundColorss } = useContext(ResumeContext);
   return (
@@ -126,11 +129,14 @@ const SummaryWrapper = ({
             // }`,
             backgroundColor: `${
               headerColor == "black" ? `${backgroundColorss}` : headerColor
+            }`,
+            color: `${
+              titleColor
             }`
           }}
           contentEditable
           suppressContentEditableWarning
-          className="text-xl font-semibold mb-1 text-center"
+          className={`text-xl font-semibold mb-1 ${titleAlign} ${titlePadding}`}
         >
           Summary
         </h2>

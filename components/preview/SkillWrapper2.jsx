@@ -19,7 +19,7 @@ const SkillsWrapper2 = ({
     <div className={`skills-section `}>
       <div className="" style={{ backgroundColor: headerColor }}>
           <h2
-            className="font-semibold px-2 py-1"
+            className="text-xl font-semibold px-2 py-1"
             contentEditable
             suppressContentEditableWarning
             // style={{

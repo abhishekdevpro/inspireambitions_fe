@@ -76,7 +76,7 @@ const Template43 = () => {
   return (
     <div
       ref={templateRef}
-      className=""
+      className="p-5"
       style={{ fontFamily: `${selectedFont}` }}
     >
       <header className="p-4 flex">
@@ -92,7 +92,7 @@ const Template43 = () => {
         <TextWrapper
           name={resumeData.name}
           position={resumeData.position}
-          className="justify-start items-start ml-[100px]"
+          className="justify-start items-start ml-10"
           headerColor={backgroundColorss}
           orientation="column" // Use "column" for stacked layout
         />
@@ -114,9 +114,15 @@ const Template43 = () => {
             resumeData={resumeData}
             headerColor={backgroundColorss}
           />
+           <Certification
+            title="Certifications"
+            certifications={resumeData.certifications}
+            hasBullet={false}
+            headerColor={"black"}
+            />
         </div>
         <aside
-          className="w-5/12 p-4"
+          className="w-5/12 pt-0 p-4"
           //   style={{ backgroundColor: backgroundColorss }}
         >
           <div className=" ">
@@ -125,7 +131,7 @@ const Template43 = () => {
                 summary={resumeData.summary}
                 headerColor={"black"}
                 editable={true} // Set to false if editing is not required
-                className="mt-6 mb-3"
+                className="mt-4 mb-3"
               />
 
               <ContactAndSocialMedia2

@@ -9,7 +9,8 @@ const Certification3 = ({
   headerColor,
   className = "",
   itemClassNames = {},
-  bgHeader = ""
+  bgHeader = "",
+  titlePadding = ""
 }) => {
   const { backgroundColorss } = useContext(ResumeContext);
 
@@ -40,7 +41,7 @@ const Certification3 = ({
             }}
             className={`text-xl font-semibold mb-1 ${
               itemClassNames.title || ""
-            }`}
+            } ${titlePadding}`}
             contentEditable
             suppressContentEditableWarning
           >
