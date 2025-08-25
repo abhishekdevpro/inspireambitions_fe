@@ -58,7 +58,7 @@
 import React, { useContext } from "react";
 import { ResumeContext } from "../context/ResumeContext";
 
-const Language2 = ({ title, languages, headerColor, newlayout = "default" }) => {
+const Language2 = ({ title, languages, headerColor, newlayout = "default", titlePadding }) => {
   const { backgroundColorss } = useContext(ResumeContext);
   if (newlayout === "timeline") {
     return (
@@ -134,7 +134,7 @@ const Language2 = ({ title, languages, headerColor, newlayout = "default" }) => 
               // }}
               contentEditable
               suppressContentEditableWarning
-              className="text-xl font-semibold mb-1"
+              className={`text-xl font-semibold mb-1 ${titlePadding}`}
             >
               {title}
             </h2>

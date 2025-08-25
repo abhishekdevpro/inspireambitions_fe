@@ -32,7 +32,7 @@ const ProjectsSection = ({ resumeData, headerColor, layout = "default", Hidden})
               }}
               contentEditable
               suppressContentEditableWarning
-              className="text-sm font-semibold mb-6 "
+              className="text-xl font-semibold mb-6 "
             >
               Projects
             </h2>

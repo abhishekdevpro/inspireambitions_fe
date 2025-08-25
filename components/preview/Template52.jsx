@@ -53,7 +53,7 @@ const Template52 = () => {
   return (
     <div ref={templateRef} style={{ fontFamily: `${selectedFont}` }}>
       <div
-        className=" flex justify-between"
+        className=" flex justify-between p-5"
         style={{ borderTop: `4px solid ${backgroundColorss}` }}
       >
         <div className={`  `}>
@@ -147,7 +147,7 @@ const Template52 = () => {
             headerColor={"black"}
           />
         </div>
-        <div className="mb-8">
+        <div className="mb-2">
           <SkillsWrapper
             skills={resumeData.skills}
             headerColor={"black"}

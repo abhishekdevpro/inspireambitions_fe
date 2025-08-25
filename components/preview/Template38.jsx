@@ -80,7 +80,7 @@ const Template38 = () => {
   return (
     <div
       ref={templateRef}
-      className=""
+      className="p-4"
       style={{ fontFamily: `${selectedFont}` }}
     >
       <TextWrapper

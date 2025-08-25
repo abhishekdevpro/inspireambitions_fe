@@ -95,7 +95,7 @@ const Template44 = () => {
             )}
           </div>
 
-          <div className="ml-[60px]">
+          <div className="ml-10">
             <SummaryWrapper
               summary={resumeData.summary}
               headerColor={"black"}
