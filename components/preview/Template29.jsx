@@ -55,7 +55,7 @@ const Template29 = () => {
     { name: "website", icon: <CgWebsite /> },
   ];
   return (
-    <div className="   " style={{ fontFamily: `${selectedFont}` }}>
+    <div className="p-5" style={{ fontFamily: `${selectedFont}` }}>
       <div class="flex gap-1 items-start ">
         {/* {resumeData?.profilePicture && (
             <ImageWrapper

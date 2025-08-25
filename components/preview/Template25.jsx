@@ -150,7 +150,7 @@ const Template25 = () => {
           className="right-column w-4/12 bg-gray-100 pl-4 pt-4"
           style={{ backgroundColor: backgroundColorss }}
         >
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 mb-4">
             <SkillsWrapper
               skills={resumeData.skills}
               headerColor={backgroundColorss ? "white" : "black"}

@@ -100,7 +100,7 @@ const Template15 = () => {
         />
       </section>
 
-      <section className="mb-6">
+      <section className="mb-4">
         <div className="col-span-2 space-y-2">
           <WorkExperience
             itemClassNames={{
@@ -132,7 +132,7 @@ const Template15 = () => {
           layout="row"
         />
       </section>
-
+          
       <SkillsWrapper
         skills={resumeData.skills}
         headerColor={"black"}
@@ -141,7 +141,8 @@ const Template15 = () => {
         layout="row"
         textColor="black"
       />
-      {console.log(backgroundColorss, "fhgjh")}
+      {/* {console.log(backgroundColorss, "fhgjh")} */}
+      <section className="space-y-5">         
       <Language
         title="Languages"
         languages={resumeData.languages}
@@ -154,6 +155,7 @@ const Template15 = () => {
         hasBullet={false}
         headerColor={"black"}
       />
+      </section>
     </div>
   );
 };
