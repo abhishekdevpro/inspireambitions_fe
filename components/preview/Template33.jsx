@@ -78,7 +78,7 @@ const Template33 = () => {
   return (
     <div
       ref={templateRef}
-      className=""
+      className="p-2"
       style={{ fontFamily: `${selectedFont}` }}
     >
       <div
