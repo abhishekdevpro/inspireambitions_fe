@@ -40,6 +40,7 @@ import template36 from "./template/template36.png";
 import template37 from "./template/template37.png";
 import template38 from "./template/template38.png";
 import template39 from "./template/template39.png";
+// import template40 from "./template/template40.png";
 import template40 from "./template/template40.png";
 import template41 from "./template/template41.png";
 import template42 from "./template/template42.png";
