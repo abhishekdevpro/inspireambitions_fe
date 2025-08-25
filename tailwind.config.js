@@ -8,8 +8,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        brandBlue: "#007BFF", // Primary blue
-        brandBlueDark: "#1A73E8", // Slightly darker sh
+        brandBlue: "#0073E6", // Primary blue
+        secondaryYellow: " #FFCC00",
+        darkBlue: "#004386",
       },
       fontFamily: {
         heading: ["Playfair Display", "serif"],
